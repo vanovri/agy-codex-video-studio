@@ -1,0 +1,39 @@
+1
+00:00:00,200 --> 00:00:02,200
+50 Hz mains hum corrupts
+
+2
+00:00:02,400 --> 00:00:04,900
+raw surface EMG signals
+
+3
+00:00:05,100 --> 00:00:08,200
+STM32 captures 4,000 Hz via DMA
+
+4
+00:00:08,500 --> 00:00:11,800
+8,000 samples lock DC baseline
+
+5
+00:00:12,100 --> 00:00:15,700
+cascaded Butterworth biquad
+
+6
+00:00:16,000 --> 00:00:19,800
+carves a -25.5 dB notch canyon
+
+7
+00:00:20,100 --> 00:00:24,100
+grip RMS climbs to 52.71 mV
+
+8
+00:00:24,400 --> 00:00:28,500
+Pearson r = 0.9941 linearity
+
+9
+00:00:29,100 --> 00:00:32,300
+12,043 rows zero drops
+
+10
+00:00:32,600 --> 00:00:35,900
+SignalProof Lab x ENVIID MRV

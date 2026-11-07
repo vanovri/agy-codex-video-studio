@@ -1,0 +1,153 @@
+{
+  "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\signalproof-enviid-showcase-1080x1920.mp4",
+  "expected_duration": 36.0,
+  "measured_duration": 36.0,
+  "duration_difference": 0.0,
+  "duration_ok": true,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "resolution_ok": true,
+  "fps": 30.0,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "contact_sheet": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\signalproof-enviid-showcase-1080x1920_sheet.png",
+  "compliance_check": {
+    "status": "completed",
+    "output": null,
+    "dry_run": false,
+    "commands": [
+      "'C:\\Users\\ardhy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.0.2-full_build\\bin\\ffmpeg.EXE' -hide_banner -nostdin -i 'C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\signalproof-enviid-showcase-1080x1920.mp4' -vn -af loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null -"
+    ],
+    "verified": false,
+    "verification": [],
+    "platform": "reels",
+    "checks": [
+      {
+        "check": "duration",
+        "status": "PASS",
+        "value": "36.00s",
+        "expected": "<= 90s",
+        "fix": "decide with the user: cut.py keeps quality but drops content; fit.py --duration speeds up (audio pitch-preserved, motion faster)",
+        "reason": "",
+        "kind": "judgement"
+      },
+      {
+        "check": "aspect",
+        "status": "PASS",
+        "value": "9:16",
+        "expected": "9:16/4:5/1:1",
+        "fix": "fit.py --aspect 9:16 --fit pad (keeps everything, adds bars) or crop (fills the frame, loses the edges: check the subject with look.py)",
+        "reason": "",
+        "kind": "judgement"
+      },
+      {
+        "check": "resolution",
+        "status": "PASS",
+        "value": "1080x1920",
+        "expected": "short side >= 1080",
+        "fix": "upscaling will not add detail; re-export from the master",
+        "reason": "",
+        "kind": "judgement"
+      },
+      {
+        "check": "fps",
+        "status": "PASS",
+        "value": "30",
+        "expected": "<= 60",
+        "fix": "fit.py --fps 30 (drops half the frames of 60 fps motion; fine for talking heads, visible on sports/gaming)",
+        "reason": "",
+        "kind": "judgement"
+      },
+      {
+        "check": "vfr",
+        "status": "PASS",
+        "value": "constant",
+        "expected": "constant",
+        "fix": "fit.py --fps N (any re-encode conforms it)",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "video codec",
+        "status": "PASS",
+        "value": "h264",
+        "expected": "h264/hevc",
+        "fix": "export.py --preset reels",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "pixel format",
+        "status": "PASS",
+        "value": "yuv420p",
+        "expected": "yuv420p (8-bit 4:2:0)",
+        "fix": "export.py preset re-encodes to yuv420p",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "colour",
+        "status": "PASS",
+        "value": "bt709/bt709",
+        "expected": "bt709/bt709 tagged (or HDR)",
+        "fix": "",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "file size",
+        "status": "PASS",
+        "value": "6.9 MB",
+        "expected": "<= 4096 MB",
+        "fix": "export.py --crf 24 or lower resolution",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "audio",
+        "status": "PASS",
+        "value": "aac 2ch 48000Hz",
+        "expected": "present",
+        "fix": "",
+        "reason": "",
+        "kind": "format"
+      },
+      {
+        "check": "subtitles",
+        "status": "WARN",
+        "value": "none",
+        "expected": ">= 1 language-tagged subtitle track",
+        "fix": "caption.py video.mp4 --mode mux --srt subs.srt:en -o video_subs.mkv (streams are copied)",
+        "reason": "subtitles are optional, but they are the cheapest accessibility win a delivery has",
+        "kind": "format"
+      },
+      {
+        "check": "loudness",
+        "status": "PASS",
+        "value": "-15.4 LUFS",
+        "expected": "-14 \u00c2\u00b1 2 LUFS",
+        "fix": "loudness.py -I -14 for speech or music; leave ambience/near-silence (<= -40 LUFS) alone and say so",
+        "reason": "",
+        "kind": "judgement"
+      },
+      {
+        "check": "true peak",
+        "status": "PASS",
+        "value": "-7.3 dBTP",
+        "expected": "<= -1 dBTP (+0.1 dB tolerance)",
+        "fix": "loudness.py --tp -1",
+        "reason": "",
+        "kind": "judgement"
+      }
+    ],
+    "failed": 0,
+    "warnings": 1,
+    "ok": true,
+    "input_identity": {
+      "size": 7270299,
+      "mtime_ns": 1793649468455887100
+    }
+  }
+}

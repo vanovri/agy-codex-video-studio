@@ -1,0 +1,923 @@
+{
+  "title": "RedFlag-Loop — Self-Evolving Indonesian Marketplace Scam Detector",
+  "hackathon": "Sea × OpenAI Codex Hackathon (Autonomous & Adaptive AI)",
+  "author": "Ardhya Novri Ramadhan, S.T.",
+  "portfolio_url": "https://ardhyanovri.my.id/",
+  "repository_url": "https://github.com/vanovri",
+  "output_video": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080.mp4",
+  "companion_srt": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080.srt",
+  "companion_json": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080.json",
+  "contact_sheet": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080_sheet.png",
+  "soundtrack_wav": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080-soundtrack.wav",
+  "spec": {
+    "width": 1920,
+    "height": 1080,
+    "aspect_ratio": "16:9",
+    "fps": 30,
+    "duration_sec": 24.0,
+    "total_frames": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2
+  },
+  "probe_verification": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "duration_sec": 24.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "has_audio": true,
+    "file_size_bytes": 1789237,
+    "raw": {
+      "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080.mp4",
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 24.0,
+      "start_time": 0.0,
+      "size_bytes": 1789237,
+      "bitrate": 596412,
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "display_aspect": "16:9",
+        "fps": 30.0,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "variable_frame_rate_suspected": false,
+        "pix_fmt": "yuv420p",
+        "bit_depth": 8,
+        "hdr": false,
+        "hdr_signal": false,
+        "bt2020_or_hdr": false,
+        "hdr_format": null,
+        "dolby_vision": null,
+        "color_space": "bt709",
+        "color_primaries": null,
+        "color_transfer": null,
+        "color_range": "tv",
+        "rotation": 0,
+        "nb_frames": 720,
+        "duration": 24.0,
+        "tagged_duration": null,
+        "start_time": 0.0,
+        "bitrate": 390893
+      },
+      "audio": {
+        "codec": "aac",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "sample_rate": 48000,
+        "bitrate": 196091,
+        "duration": 24.0,
+        "start_time": 0.0,
+        "tagged_duration": null
+      },
+      "subtitle_streams": 0,
+      "data_streams": 0,
+      "stream_counts": {
+        "video": 1,
+        "audio": 1
+      },
+      "chapters": [],
+      "tags": {},
+      "timecode": {
+        "value": null,
+        "drop_frame": null,
+        "source": null
+      },
+      "subtitle_stream_details": [],
+      "audio_streams": [
+        {
+          "index": 0,
+          "codec": "aac",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "sample_rate": 48000,
+          "language": "und",
+          "title": null
+        }
+      ]
+    }
+  },
+  "soundtrack": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\redflag-loop-sea-codex-demo-1920x1080-soundtrack.wav",
+    "duration_sec": 24.0,
+    "sample_rate": 48000,
+    "channels": 2,
+    "bpm": 124.0,
+    "beats": [
+      0.0,
+      0.484,
+      0.968,
+      1.452,
+      1.935,
+      2.419,
+      2.903,
+      3.387,
+      3.871,
+      4.355,
+      4.839,
+      5.323,
+      5.806,
+      6.29,
+      6.774,
+      7.258,
+      7.742,
+      8.226,
+      8.71,
+      9.194,
+      9.677,
+      10.161,
+      10.645,
+      11.129,
+      11.613,
+      12.097,
+      12.581,
+      13.065,
+      13.548,
+      14.032,
+      14.516,
+      15.0,
+      15.484,
+      15.968,
+      16.452,
+      16.935,
+      17.419,
+      17.903,
+      18.387,
+      18.871,
+      19.355,
+      19.839,
+      20.323,
+      20.806,
+      21.29,
+      21.774,
+      22.258,
+      22.742,
+      23.226
+    ],
+    "scene_cues": {
+      "scene_1": {
+        "t_start": 0.0,
+        "t_end": 5.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Hook: 50 Hz Hum Corrupts"
+      },
+      "scene_2": {
+        "t_start": 5.0,
+        "t_end": 12.0,
+        "root": "Bb1",
+        "key": "Bb major",
+        "label": "Pipeline: STM32 4,000 Hz DMA"
+      },
+      "scene_3": {
+        "t_start": 12.0,
+        "t_end": 20.0,
+        "root": "F2",
+        "key": "F major",
+        "label": "Biquad: -25.5 dB Notch Canyon"
+      },
+      "scene_4": {
+        "t_start": 20.0,
+        "t_end": 24.0,
+        "root": "C2",
+        "key": "C major",
+        "label": "Data-Viz: Grip RMS Pearson r=0.9941"
+      },
+      "pre_payoff_break": {
+        "t_start": 28.5,
+        "t_end": 24.0,
+        "label": "0.5s Pre-Payoff Silence Break"
+      },
+      "scene_5": {
+        "t_start": 29.0,
+        "t_end": 24.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Payoff: 12,043 Rows Zero Drops Ledger"
+      }
+    },
+    "peak_dbfs": -5.2,
+    "rms_dbfs": -14.73
+  },
+  "scenes": [
+    {
+      "scene_id": "rf_scene_01_problem_scams",
+      "index": 1,
+      "start_sec": 0.0,
+      "end_sec": 6.0,
+      "title": "INDONESIAN MARKETPLACE CHAT SCAMS (ID-ScamChat-72)",
+      "subtitle": "Fake Courier .apk Resi · Phishing Links · QRIS Refund Traps · Escrow Bypass · Fake CS Urgency",
+      "metrics": [
+        {
+          "label": "BENCHMARK CORPUS",
+          "value": "72 CHATS",
+          "detail": "36 Dev + 36 Holdout Val · 5 Adversarial Scam Vectors"
+        },
+        {
+          "label": "GEN 0 BASELINE F1",
+          "value": "0.629 F1",
+          "detail": "Naive Keyword Rules Suffering 11 False Positives"
+        },
+        {
+          "label": "BENIGN AMBIGUITY",
+          "value": "11 FP TRAPS",
+          "detail": "Legit Resi, Pusat Resolusi & Official Links Flagged"
+        }
+      ]
+    },
+    {
+      "scene_id": "rf_scene_02_autonomous_loop",
+      "index": 2,
+      "start_sec": 6.0,
+      "end_sec": 12.0,
+      "title": "AUTONOMOUS ERROR CLUSTERING & RULE SYNTHESIS",
+      "subtitle": "Zero-Human-Intervention Closed Loop · Automated FP & FN Failure Mode Clustering on Dev/Val",
+      "metrics": [
+        {
+          "label": "AGENT ARCHITECTURE",
+          "value": "4-STAGE LOOP",
+          "detail": "Write Rules -> Run Suite -> Eval Metrics -> Repair"
+        },
+        {
+          "label": "ERROR CLUSTERING",
+          "value": "FP & FN TAXON",
+          "detail": "Auto-Groups Obfuscated Evasions vs Benign Collisions"
+        },
+        {
+          "label": "GEN 1 EVOLUTION",
+          "value": "0.824 F1",
+          "detail": "+0.195 F1 Jump After First Autonomous Repair Cycle"
+        }
+      ]
+    },
+    {
+      "scene_id": "rf_scene_03_precision_guardrail",
+      "index": 3,
+      "start_sec": 12.0,
+      "end_sec": 18.0,
+      "title": "CANDIDATE 2A ROLLBACK & WHITELIST SYNTHESIS",
+      "subtitle": "Rejects Overbroad Candidate 2A (Precision < 1.00) · Synthesizes Obfuscation Regex + Safe Whitelists",
+      "metrics": [
+        {
+          "label": "REJECTED CANDIDATE",
+          "value": "2A ROLLBACK",
+          "detail": "Precision 0.895 < 1.00 Gate -> Auto-Reverted"
+        },
+        {
+          "label": "SAFE WHITELISTS",
+          "value": "PUSAT RESOLUSI",
+          "detail": "Protects Official Courier Resi & Escrow Dispute Flows"
+        },
+        {
+          "label": "REPAIRED GEN 2B",
+          "value": "0.936 F1",
+          "detail": "Precision Restored to 1.000 with Obfuscation Regex"
+        }
+      ]
+    },
+    {
+      "scene_id": "rf_scene_04_verified_convergence",
+      "index": 4,
+      "start_sec": 18.0,
+      "end_sec": 24.0,
+      "title": "CONVERGENCE TO 1.000 F1 & ZERO FALSE POSITIVES",
+      "subtitle": "Gen 0 (0.629, 11 FPs) -> Gen 1 (0.824) -> Gen 2 (0.936) -> Gen 3 (1.000 F1, 0 FPs, 5/5 Pytest PASS)",
+      "metrics": [
+        {
+          "label": "FINAL CONVERGENCE",
+          "value": "1.000 F1",
+          "detail": "100% Precision & 100% Recall on Dev + Holdout Val"
+        },
+        {
+          "label": "FALSE POSITIVES",
+          "value": "11 -> 0 FPs",
+          "detail": "Complete Elimination of Benign Buyer/Seller Friction"
+        },
+        {
+          "label": "TOTAL F1 GAIN",
+          "value": "+0.371 F1",
+          "detail": "0.629 -> 1.000 Across 3 Generations · 5/5 Pytest PASS"
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "id": "redflag_cg_01",
+      "text": "Indonesian marketplace chats face APK resi and QRIS scams",
+      "start": 0.15,
+      "end": 2.95,
+      "words": [
+        {
+          "word": "Indonesian",
+          "start": 0.15,
+          "end": 0.43,
+          "score": 0.99
+        },
+        {
+          "word": "marketplace",
+          "start": 0.461,
+          "end": 0.741,
+          "score": 0.99
+        },
+        {
+          "word": "chats",
+          "start": 0.772,
+          "end": 1.052,
+          "score": 0.99
+        },
+        {
+          "word": "face",
+          "start": 1.083,
+          "end": 1.363,
+          "score": 0.99
+        },
+        {
+          "word": "APK",
+          "start": 1.394,
+          "end": 1.674,
+          "score": 0.99
+        },
+        {
+          "word": "resi",
+          "start": 1.706,
+          "end": 1.986,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 2.017,
+          "end": 2.297,
+          "score": 0.99
+        },
+        {
+          "word": "QRIS",
+          "start": 2.328,
+          "end": 2.608,
+          "score": 0.99
+        },
+        {
+          "word": "scams",
+          "start": 2.639,
+          "end": 2.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_02",
+      "text": "Gen 0 rules score 0.629 F1 with 11 false positives on ID-ScamChat-72",
+      "start": 3.05,
+      "end": 5.85,
+      "words": [
+        {
+          "word": "Gen",
+          "start": 3.05,
+          "end": 3.26,
+          "score": 0.99
+        },
+        {
+          "word": "0",
+          "start": 3.283,
+          "end": 3.493,
+          "score": 0.99
+        },
+        {
+          "word": "rules",
+          "start": 3.517,
+          "end": 3.727,
+          "score": 0.99
+        },
+        {
+          "word": "score",
+          "start": 3.75,
+          "end": 3.96,
+          "score": 0.99
+        },
+        {
+          "word": "0.629",
+          "start": 3.983,
+          "end": 4.193,
+          "score": 0.99
+        },
+        {
+          "word": "F1",
+          "start": 4.217,
+          "end": 4.427,
+          "score": 0.99
+        },
+        {
+          "word": "with",
+          "start": 4.45,
+          "end": 4.66,
+          "score": 0.99
+        },
+        {
+          "word": "11",
+          "start": 4.683,
+          "end": 4.893,
+          "score": 0.99
+        },
+        {
+          "word": "false",
+          "start": 4.917,
+          "end": 5.127,
+          "score": 0.99
+        },
+        {
+          "word": "positives",
+          "start": 5.15,
+          "end": 5.36,
+          "score": 0.99
+        },
+        {
+          "word": "on",
+          "start": 5.383,
+          "end": 5.593,
+          "score": 0.99
+        },
+        {
+          "word": "ID-ScamChat-72",
+          "start": 5.617,
+          "end": 5.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_03",
+      "text": "Autonomous Write-Run-Evaluate-Repair loop clusters FPs and FNs",
+      "start": 6.15,
+      "end": 8.95,
+      "words": [
+        {
+          "word": "Autonomous",
+          "start": 6.15,
+          "end": 6.51,
+          "score": 0.99
+        },
+        {
+          "word": "Write-Run-Evaluate-Repair",
+          "start": 6.55,
+          "end": 6.91,
+          "score": 0.99
+        },
+        {
+          "word": "loop",
+          "start": 6.95,
+          "end": 7.31,
+          "score": 0.99
+        },
+        {
+          "word": "clusters",
+          "start": 7.35,
+          "end": 7.71,
+          "score": 0.99
+        },
+        {
+          "word": "FPs",
+          "start": 7.75,
+          "end": 8.11,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 8.15,
+          "end": 8.51,
+          "score": 0.99
+        },
+        {
+          "word": "FNs",
+          "start": 8.55,
+          "end": 8.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_04",
+      "text": "Evolves rule logic without human intervention on dev and val splits",
+      "start": 9.05,
+      "end": 11.85,
+      "words": [
+        {
+          "word": "Evolves",
+          "start": 9.05,
+          "end": 9.279,
+          "score": 0.99
+        },
+        {
+          "word": "rule",
+          "start": 9.305,
+          "end": 9.534,
+          "score": 0.99
+        },
+        {
+          "word": "logic",
+          "start": 9.559,
+          "end": 9.788,
+          "score": 0.99
+        },
+        {
+          "word": "without",
+          "start": 9.814,
+          "end": 10.043,
+          "score": 0.99
+        },
+        {
+          "word": "human",
+          "start": 10.068,
+          "end": 10.297,
+          "score": 0.99
+        },
+        {
+          "word": "intervention",
+          "start": 10.323,
+          "end": 10.552,
+          "score": 0.99
+        },
+        {
+          "word": "on",
+          "start": 10.577,
+          "end": 10.806,
+          "score": 0.99
+        },
+        {
+          "word": "dev",
+          "start": 10.832,
+          "end": 11.061,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 11.086,
+          "end": 11.315,
+          "score": 0.99
+        },
+        {
+          "word": "val",
+          "start": 11.341,
+          "end": 11.57,
+          "score": 0.99
+        },
+        {
+          "word": "splits",
+          "start": 11.595,
+          "end": 11.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_05",
+      "text": "Precision guardrail automatically rolls back overbroad Candidate 2A",
+      "start": 12.15,
+      "end": 14.95,
+      "words": [
+        {
+          "word": "Precision",
+          "start": 12.15,
+          "end": 12.465,
+          "score": 0.99
+        },
+        {
+          "word": "guardrail",
+          "start": 12.5,
+          "end": 12.815,
+          "score": 0.99
+        },
+        {
+          "word": "automatically",
+          "start": 12.85,
+          "end": 13.165,
+          "score": 0.99
+        },
+        {
+          "word": "rolls",
+          "start": 13.2,
+          "end": 13.515,
+          "score": 0.99
+        },
+        {
+          "word": "back",
+          "start": 13.55,
+          "end": 13.865,
+          "score": 0.99
+        },
+        {
+          "word": "overbroad",
+          "start": 13.9,
+          "end": 14.215,
+          "score": 0.99
+        },
+        {
+          "word": "Candidate",
+          "start": 14.25,
+          "end": 14.565,
+          "score": 0.99
+        },
+        {
+          "word": "2A",
+          "start": 14.6,
+          "end": 14.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_06",
+      "text": "Synthesizes obfuscation regex and Pusat Resolusi whitelists",
+      "start": 15.05,
+      "end": 17.85,
+      "words": [
+        {
+          "word": "Synthesizes",
+          "start": 15.05,
+          "end": 15.41,
+          "score": 0.99
+        },
+        {
+          "word": "obfuscation",
+          "start": 15.45,
+          "end": 15.81,
+          "score": 0.99
+        },
+        {
+          "word": "regex",
+          "start": 15.85,
+          "end": 16.21,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 16.25,
+          "end": 16.61,
+          "score": 0.99
+        },
+        {
+          "word": "Pusat",
+          "start": 16.65,
+          "end": 17.01,
+          "score": 0.99
+        },
+        {
+          "word": "Resolusi",
+          "start": 17.05,
+          "end": 17.41,
+          "score": 0.99
+        },
+        {
+          "word": "whitelists",
+          "start": 17.45,
+          "end": 17.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_07",
+      "text": "F1 converges from 0.629 to 0.824, 0.936, and 1.000 in Gen 3",
+      "start": 18.15,
+      "end": 20.95,
+      "words": [
+        {
+          "word": "F1",
+          "start": 18.15,
+          "end": 18.36,
+          "score": 0.99
+        },
+        {
+          "word": "converges",
+          "start": 18.383,
+          "end": 18.593,
+          "score": 0.99
+        },
+        {
+          "word": "from",
+          "start": 18.617,
+          "end": 18.827,
+          "score": 0.99
+        },
+        {
+          "word": "0.629",
+          "start": 18.85,
+          "end": 19.06,
+          "score": 0.99
+        },
+        {
+          "word": "to",
+          "start": 19.083,
+          "end": 19.293,
+          "score": 0.99
+        },
+        {
+          "word": "0.824,",
+          "start": 19.317,
+          "end": 19.527,
+          "score": 0.99
+        },
+        {
+          "word": "0.936,",
+          "start": 19.55,
+          "end": 19.76,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 19.783,
+          "end": 19.993,
+          "score": 0.99
+        },
+        {
+          "word": "1.000",
+          "start": 20.017,
+          "end": 20.227,
+          "score": 0.99
+        },
+        {
+          "word": "in",
+          "start": 20.25,
+          "end": 20.46,
+          "score": 0.99
+        },
+        {
+          "word": "Gen",
+          "start": 20.483,
+          "end": 20.693,
+          "score": 0.99
+        },
+        {
+          "word": "3",
+          "start": 20.717,
+          "end": 20.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "redflag_cg_08",
+      "text": "Zero false positives, +0.371 F1 gain, and 5/5 pytest pass",
+      "start": 21.05,
+      "end": 23.85,
+      "words": [
+        {
+          "word": "Zero",
+          "start": 21.05,
+          "end": 21.302,
+          "score": 0.99
+        },
+        {
+          "word": "false",
+          "start": 21.33,
+          "end": 21.582,
+          "score": 0.99
+        },
+        {
+          "word": "positives,",
+          "start": 21.61,
+          "end": 21.862,
+          "score": 0.99
+        },
+        {
+          "word": "+0.371",
+          "start": 21.89,
+          "end": 22.142,
+          "score": 0.99
+        },
+        {
+          "word": "F1",
+          "start": 22.17,
+          "end": 22.422,
+          "score": 0.99
+        },
+        {
+          "word": "gain,",
+          "start": 22.45,
+          "end": 22.702,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 22.73,
+          "end": 22.982,
+          "score": 0.99
+        },
+        {
+          "word": "5/5",
+          "start": 23.01,
+          "end": 23.262,
+          "score": 0.99
+        },
+        {
+          "word": "pytest",
+          "start": 23.29,
+          "end": 23.542,
+          "score": 0.99
+        },
+        {
+          "word": "pass",
+          "start": 23.57,
+          "end": 23.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    }
+  ],
+  "verified_proof": {
+    "benchmark": "ID-ScamChat-72 (36 dev + 36 holdout val)",
+    "scam_vectors": [
+      "Fake Courier .apk Resi",
+      "Phishing Links",
+      "QRIS Refund Traps",
+      "Off-Platform Escrow Bypass",
+      "Fake CS Urgency"
+    ],
+    "loop_stages": [
+      "Write",
+      "Run",
+      "Evaluate",
+      "Repair"
+    ],
+    "guardrail_rollback": "Candidate 2A rejected (Precision 0.895 < 1.00)",
+    "f1_trajectory": {
+      "gen_0": {
+        "f1": 0.629,
+        "false_positives": 11
+      },
+      "gen_1": {
+        "f1": 0.824,
+        "false_positives": 4
+      },
+      "gen_2a_rejected": {
+        "f1": 0.861,
+        "false_positives": 2,
+        "status": "ROLLED_BACK"
+      },
+      "gen_2b": {
+        "f1": 0.936,
+        "false_positives": 0
+      },
+      "gen_3": {
+        "f1": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      }
+    },
+    "f1_gain": 0.371,
+    "pytest_passed": "5/5"
+  }
+}

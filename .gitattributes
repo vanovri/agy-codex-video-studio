@@ -1,0 +1,6 @@
+* text=auto eol=lf
+studio/** -text
+outputs/*.mp4 binary
+outputs/*.png binary
+outputs/*.wav binary
+studio/assets/*.wav binary

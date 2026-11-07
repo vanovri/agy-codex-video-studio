@@ -1,0 +1,805 @@
+{
+  "title": "Ardhya Novri Ramadhan — Quad Engineering Systems Showcase",
+  "author": "Ardhya Novri Ramadhan, S.T.",
+  "portfolio_url": "https://ardhyanovri.my.id/",
+  "repository_url": "https://github.com/vanovri",
+  "output_video": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-1080x1920.mp4",
+  "companion_srt": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase.srt",
+  "contact_sheet": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-1080x1920_sheet.png",
+  "soundtrack_wav": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-soundtrack.wav",
+  "spec": {
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "fps": 30,
+    "duration_sec": 24.0,
+    "total_frames": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2
+  },
+  "probe_verification": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-1080x1920.mp4",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration_sec": 24.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "has_audio": true,
+    "file_size_bytes": 3436276,
+    "raw": {
+      "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-1080x1920.mp4",
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 24.0,
+      "start_time": 0.0,
+      "size_bytes": 3436276,
+      "bitrate": 1145425,
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1080,
+        "height": 1920,
+        "display_aspect": "9:16",
+        "fps": 30.0,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "variable_frame_rate_suspected": false,
+        "pix_fmt": "yuv420p",
+        "bit_depth": 8,
+        "hdr": false,
+        "hdr_signal": false,
+        "bt2020_or_hdr": false,
+        "hdr_format": null,
+        "dolby_vision": null,
+        "color_space": "bt709",
+        "color_primaries": null,
+        "color_transfer": null,
+        "color_range": "tv",
+        "rotation": 0,
+        "nb_frames": 720,
+        "duration": 24.0,
+        "tagged_duration": null,
+        "start_time": 0.0,
+        "bitrate": 938905
+      },
+      "audio": {
+        "codec": "aac",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "sample_rate": 48000,
+        "bitrate": 197138,
+        "duration": 24.0,
+        "start_time": 0.0,
+        "tagged_duration": null
+      },
+      "subtitle_streams": 0,
+      "data_streams": 0,
+      "stream_counts": {
+        "video": 1,
+        "audio": 1
+      },
+      "chapters": [],
+      "tags": {},
+      "timecode": {
+        "value": null,
+        "drop_frame": null,
+        "source": null
+      },
+      "subtitle_stream_details": [],
+      "audio_streams": [
+        {
+          "index": 0,
+          "codec": "aac",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "sample_rate": 48000,
+          "language": "und",
+          "title": null
+        }
+      ]
+    }
+  },
+  "soundtrack": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\ardhya-engineering-quad-showcase-soundtrack.wav",
+    "duration_sec": 24.0,
+    "sample_rate": 48000,
+    "channels": 2,
+    "bpm": 120.0,
+    "beats": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0,
+      10.5,
+      11.0,
+      11.5,
+      12.0,
+      12.5,
+      13.0,
+      13.5,
+      14.0,
+      14.5,
+      15.0,
+      15.5,
+      16.0,
+      16.5,
+      17.0,
+      17.5,
+      18.0,
+      18.5,
+      19.0,
+      19.5,
+      20.0,
+      20.5,
+      21.0,
+      21.5,
+      22.0,
+      22.5,
+      23.0,
+      23.5
+    ],
+    "scene_cues": {
+      "scene_1": {
+        "t_start": 0.0,
+        "t_end": 5.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Hook: 50 Hz Hum Corrupts"
+      },
+      "scene_2": {
+        "t_start": 5.0,
+        "t_end": 12.0,
+        "root": "Bb1",
+        "key": "Bb major",
+        "label": "Pipeline: STM32 4,000 Hz DMA"
+      },
+      "scene_3": {
+        "t_start": 12.0,
+        "t_end": 20.0,
+        "root": "F2",
+        "key": "F major",
+        "label": "Biquad: -25.5 dB Notch Canyon"
+      },
+      "scene_4": {
+        "t_start": 20.0,
+        "t_end": 24.0,
+        "root": "C2",
+        "key": "C major",
+        "label": "Data-Viz: Grip RMS Pearson r=0.9941"
+      },
+      "pre_payoff_break": {
+        "t_start": 28.5,
+        "t_end": 24.0,
+        "label": "0.5s Pre-Payoff Silence Break"
+      },
+      "scene_5": {
+        "t_start": 29.0,
+        "t_end": 24.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Payoff: 12,043 Rows Zero Drops Ledger"
+      }
+    },
+    "peak_dbfs": -5.72,
+    "rms_dbfs": -14.73
+  },
+  "scenes": [
+    {
+      "scene_id": "scene_01_stm32_emg",
+      "index": 1,
+      "start_sec": 0.0,
+      "end_sec": 6.0,
+      "title": "STM32F411 EMG FILTER PIPELINE",
+      "subtitle": "Nominal 4,000 Hz 12-Bit ADC + DMA · Cascaded Biquad IIR",
+      "metrics": [
+        {
+          "label": "SAMPLING RATE",
+          "value": "4,000 Hz",
+          "detail": "12-bit ADC1 PA0 + Circular DMA"
+        },
+        {
+          "label": "BIQUAD CASCADE",
+          "value": "20-500 Hz",
+          "detail": "2nd-Order Butterworth + 50 Hz Notch Q=30"
+        },
+        {
+          "label": "FEATURE WINDOW",
+          "value": "100 ms",
+          "detail": "400-Sample RMS/MAV · Pearson r = 0.994"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_02_uart_fixture_kit",
+      "index": 2,
+      "start_sec": 6.0,
+      "end_sec": 12.0,
+      "title": "UART FIXTURE KIT v0.1.0",
+      "subtitle": "Deterministic Byte-Stream Framing & Fault Injection",
+      "metrics": [
+        {
+          "label": "TEST SUITE",
+          "value": "130 PASS",
+          "detail": "100% Deterministic Pytest Verification"
+        },
+        {
+          "label": "STREAM FIXTURES",
+          "value": "15 / 15",
+          "detail": "Fragmented Chunks, Noise & Baud Jitter"
+        },
+        {
+          "label": "INTEGRITY GUARD",
+          "value": "CRC-32",
+          "detail": "Framing Stress & Multi-OS CI Matrix"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_03_benchmind",
+      "index": 3,
+      "start_sec": 12.0,
+      "end_sec": 18.0,
+      "title": "BENCHMIND v0.2.0",
+      "subtitle": "AI Root-Cause Hardware Copilot & Signal Recovery",
+      "metrics": [
+        {
+          "label": "FRAME RECOVERY",
+          "value": "1,997 / 1,997",
+          "detail": "100% Valid UART Telemetry Frames Recovered"
+        },
+        {
+          "label": "HUM ATTENUATION",
+          "value": "-25.5 dB",
+          "detail": "50 Hz Mains Interference Suppression"
+        },
+        {
+          "label": "DIAGNOSTIC ENGINE",
+          "value": "AI COPILOT",
+          "detail": "Automated Hardware Fault Isolation Ledger"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_04_packing_arena_portfolio",
+      "index": 4,
+      "start_sec": 18.0,
+      "end_sec": 24.0,
+      "title": "PACKING ARENA & PORTFOLIO",
+      "subtitle": "Interactive 2D Bin-Packing Heuristics · ardhyanovri.my.id",
+      "metrics": [
+        {
+          "label": "PACKING ARENA",
+          "value": "v0.1.0 LIVE",
+          "detail": "Real-Time 2D Bin-Packing Heuristics Arena"
+        },
+        {
+          "label": "SIGNAL LAB",
+          "value": "60 FPS 3D",
+          "detail": "Interactive WebGL Waterfall & Biquad Workbench"
+        },
+        {
+          "label": "PORTFOLIO HUB",
+          "value": "ardhyanovri.my.id",
+          "detail": "Verified Hardware, DSP, Python & Web Systems"
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "id": "quad_cg_01",
+      "text": "STM32F411 captures 4,000 Hz EMG via DMA",
+      "start": 0.15,
+      "end": 2.95,
+      "words": [
+        {
+          "word": "STM32F411",
+          "start": 0.15,
+          "end": 0.51,
+          "score": 0.99
+        },
+        {
+          "word": "captures",
+          "start": 0.55,
+          "end": 0.91,
+          "score": 0.99
+        },
+        {
+          "word": "4,000",
+          "start": 0.95,
+          "end": 1.31,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 1.35,
+          "end": 1.71,
+          "score": 0.99
+        },
+        {
+          "word": "EMG",
+          "start": 1.75,
+          "end": 2.11,
+          "score": 0.99
+        },
+        {
+          "word": "via",
+          "start": 2.15,
+          "end": 2.51,
+          "score": 0.99
+        },
+        {
+          "word": "DMA",
+          "start": 2.55,
+          "end": 2.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_02",
+      "text": "Butterworth 20-500 Hz + Q=30 Notch locks r=0.994",
+      "start": 3.05,
+      "end": 5.85,
+      "words": [
+        {
+          "word": "Butterworth",
+          "start": 3.05,
+          "end": 3.365,
+          "score": 0.99
+        },
+        {
+          "word": "20-500",
+          "start": 3.4,
+          "end": 3.715,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 3.75,
+          "end": 4.065,
+          "score": 0.99
+        },
+        {
+          "word": "+",
+          "start": 4.1,
+          "end": 4.415,
+          "score": 0.99
+        },
+        {
+          "word": "Q=30",
+          "start": 4.45,
+          "end": 4.765,
+          "score": 0.99
+        },
+        {
+          "word": "Notch",
+          "start": 4.8,
+          "end": 5.115,
+          "score": 0.99
+        },
+        {
+          "word": "locks",
+          "start": 5.15,
+          "end": 5.465,
+          "score": 0.99
+        },
+        {
+          "word": "r=0.994",
+          "start": 5.5,
+          "end": 5.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_03",
+      "text": "UART Fixture Kit v0.1.0: 130 pytest pass",
+      "start": 6.15,
+      "end": 8.95,
+      "words": [
+        {
+          "word": "UART",
+          "start": 6.15,
+          "end": 6.51,
+          "score": 0.99
+        },
+        {
+          "word": "Fixture",
+          "start": 6.55,
+          "end": 6.91,
+          "score": 0.99
+        },
+        {
+          "word": "Kit",
+          "start": 6.95,
+          "end": 7.31,
+          "score": 0.99
+        },
+        {
+          "word": "v0.1.0:",
+          "start": 7.35,
+          "end": 7.71,
+          "score": 0.99
+        },
+        {
+          "word": "130",
+          "start": 7.75,
+          "end": 8.11,
+          "score": 0.99
+        },
+        {
+          "word": "pytest",
+          "start": 8.15,
+          "end": 8.51,
+          "score": 0.99
+        },
+        {
+          "word": "pass",
+          "start": 8.55,
+          "end": 8.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_04",
+      "text": "15/15 synthetic stream fixtures & CRC-32 stress",
+      "start": 9.05,
+      "end": 11.85,
+      "words": [
+        {
+          "word": "15/15",
+          "start": 9.05,
+          "end": 9.41,
+          "score": 0.99
+        },
+        {
+          "word": "synthetic",
+          "start": 9.45,
+          "end": 9.81,
+          "score": 0.99
+        },
+        {
+          "word": "stream",
+          "start": 9.85,
+          "end": 10.21,
+          "score": 0.99
+        },
+        {
+          "word": "fixtures",
+          "start": 10.25,
+          "end": 10.61,
+          "score": 0.99
+        },
+        {
+          "word": "&",
+          "start": 10.65,
+          "end": 11.01,
+          "score": 0.99
+        },
+        {
+          "word": "CRC-32",
+          "start": 11.05,
+          "end": 11.41,
+          "score": 0.99
+        },
+        {
+          "word": "stress",
+          "start": 11.45,
+          "end": 11.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_05",
+      "text": "BenchMind v0.2.0 recovers 1,997/1,997 UART frames",
+      "start": 12.15,
+      "end": 14.95,
+      "words": [
+        {
+          "word": "BenchMind",
+          "start": 12.15,
+          "end": 12.57,
+          "score": 0.99
+        },
+        {
+          "word": "v0.2.0",
+          "start": 12.617,
+          "end": 13.037,
+          "score": 0.99
+        },
+        {
+          "word": "recovers",
+          "start": 13.083,
+          "end": 13.503,
+          "score": 0.99
+        },
+        {
+          "word": "1,997/1,997",
+          "start": 13.55,
+          "end": 13.97,
+          "score": 0.99
+        },
+        {
+          "word": "UART",
+          "start": 14.017,
+          "end": 14.437,
+          "score": 0.99
+        },
+        {
+          "word": "frames",
+          "start": 14.483,
+          "end": 14.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_06",
+      "text": "25.5 dB 50 Hz hum suppression & AI root-cause copilot",
+      "start": 15.05,
+      "end": 17.85,
+      "words": [
+        {
+          "word": "25.5",
+          "start": 15.05,
+          "end": 15.302,
+          "score": 0.99
+        },
+        {
+          "word": "dB",
+          "start": 15.33,
+          "end": 15.582,
+          "score": 0.99
+        },
+        {
+          "word": "50",
+          "start": 15.61,
+          "end": 15.862,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 15.89,
+          "end": 16.142,
+          "score": 0.99
+        },
+        {
+          "word": "hum",
+          "start": 16.17,
+          "end": 16.422,
+          "score": 0.99
+        },
+        {
+          "word": "suppression",
+          "start": 16.45,
+          "end": 16.702,
+          "score": 0.99
+        },
+        {
+          "word": "&",
+          "start": 16.73,
+          "end": 16.982,
+          "score": 0.99
+        },
+        {
+          "word": "AI",
+          "start": 17.01,
+          "end": 17.262,
+          "score": 0.99
+        },
+        {
+          "word": "root-cause",
+          "start": 17.29,
+          "end": 17.542,
+          "score": 0.99
+        },
+        {
+          "word": "copilot",
+          "start": 17.57,
+          "end": 17.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_07",
+      "text": "Packing Arena v0.1.0 interactive 2D bin-packing",
+      "start": 18.15,
+      "end": 20.95,
+      "words": [
+        {
+          "word": "Packing",
+          "start": 18.15,
+          "end": 18.57,
+          "score": 0.99
+        },
+        {
+          "word": "Arena",
+          "start": 18.617,
+          "end": 19.037,
+          "score": 0.99
+        },
+        {
+          "word": "v0.1.0",
+          "start": 19.083,
+          "end": 19.503,
+          "score": 0.99
+        },
+        {
+          "word": "interactive",
+          "start": 19.55,
+          "end": 19.97,
+          "score": 0.99
+        },
+        {
+          "word": "2D",
+          "start": 20.017,
+          "end": 20.437,
+          "score": 0.99
+        },
+        {
+          "word": "bin-packing",
+          "start": 20.483,
+          "end": 20.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    },
+    {
+      "id": "quad_cg_08",
+      "text": "Explore full-stack proofs at ardhyanovri.my.id",
+      "start": 21.05,
+      "end": 23.85,
+      "words": [
+        {
+          "word": "Explore",
+          "start": 21.05,
+          "end": 21.554,
+          "score": 0.99
+        },
+        {
+          "word": "full-stack",
+          "start": 21.61,
+          "end": 22.114,
+          "score": 0.99
+        },
+        {
+          "word": "proofs",
+          "start": 22.17,
+          "end": 22.674,
+          "score": 0.99
+        },
+        {
+          "word": "at",
+          "start": 22.73,
+          "end": 23.234,
+          "score": 0.99
+        },
+        {
+          "word": "ardhyanovri.my.id",
+          "start": 23.29,
+          "end": 23.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 90,
+        "y": 1180,
+        "width": 900,
+        "height": 150
+      }
+    }
+  ],
+  "flagship_systems": {
+    "stm32f411_emg_pipeline": {
+      "mcu": "STM32F411CEU6",
+      "sensor": "DFRobot SEN0240 Analog EMG (ADC1 PA0)",
+      "sampling_rate_hz_nominal": 4000,
+      "calibration_samples": 8000,
+      "filters": [
+        "Butterworth 2nd-Order HPF 20 Hz",
+        "Butterworth 2nd-Order LPF 500 Hz",
+        "2nd-Order 50 Hz Notch Q=30"
+      ],
+      "feature_window_ms": 100,
+      "feature_window_samples": 400,
+      "pearson_r": 0.994114,
+      "grip_rms_mv": {
+        "relax": 7.64,
+        "light": 16.1,
+        "medium_rpe5": 38.52,
+        "strong": 52.71
+      }
+    },
+    "uart_fixture_kit": {
+      "version": "v0.1.0",
+      "pytest_passed": 130,
+      "synthetic_fixtures": "15/15",
+      "verification": [
+        "CRC-32",
+        "Framing stress",
+        "Fragmentation & noise injection"
+      ]
+    },
+    "benchmind": {
+      "version": "v0.2.0",
+      "event": "Meta Global AI Developer Hackathon",
+      "uart_frames_recovered": "1,997/1,997",
+      "hum_attenuation_db": 25.5,
+      "role": "AI root-cause hardware copilot"
+    },
+    "packing_arena_and_portfolio": {
+      "packing_arena_version": "v0.1.0",
+      "domain": "https://ardhyanovri.my.id/",
+      "features": [
+        "Interactive 2D bin-packing heuristics",
+        "3D WebGL Signal Lab",
+        "Full-stack engineering portfolio"
+      ]
+    }
+  }
+}

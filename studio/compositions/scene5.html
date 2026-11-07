@@ -1,0 +1,185 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .s5-safe {
+      position: absolute;
+      left: 90px;
+      top: 176px;
+      width: 900px;
+      height: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .s5-ledger {
+      background: #f4f1ea;
+      border: 4px solid #11151c;
+      box-shadow: 12px 12px 0px #ff4d1c;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s5-stamp {
+      display: inline-block;
+      align-self: flex-start;
+      background: #10b981;
+      color: #11151c;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border: 2px solid #11151c;
+    }
+    .s5-big-stat {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 82px;
+      line-height: 1;
+      color: #11151c;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .s5-sub-stat {
+      font-family: "Space Mono", monospace;
+      font-size: 30px;
+      font-weight: 700;
+      color: #11151c;
+    }
+    .s5-dual-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .s5-domain-card {
+      background: #0b0e13;
+      border: 3px solid #f4f1ea;
+      padding: 22px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .s5-domain-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 36px;
+      color: #10b981;
+    }
+    .s5-domain-title-orange {
+      color: #ff4d1c;
+    }
+    .s5-domain-desc {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f4f1ea;
+    }
+    .s5-footer-sign {
+      background: #181e29;
+      border: 3px solid #f4f1ea;
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f4f1ea;
+    }
+  </style>
+
+  <div data-hf-id="hf-iy9w" id="root" data-composition-id="scene5" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-ibqn" id="s5-container" class="clip s5-safe" data-start="0" data-duration="7" data-beat="s5-payoff">
+      <div data-hf-id="hf-vym9" id="s5-hero-ledger" class="s5-ledger">
+        <span data-hf-id="hf-wmfc" class="s5-stamp">CRC-32 + SHA-256 VERIFIED</span>
+        <div data-hf-id="hf-x1ex" id="s5-rows-count" class="s5-big-stat">12,043 / 12,043</div>
+        <div data-hf-id="hf-psmi" class="s5-sub-stat">0 DROPPED FRAMES · 5,901 FEATURE UPDATES</div>
+      </div>
+
+      <div data-hf-id="hf-nogj" class="s5-dual-box">
+        <div data-hf-id="hf-za2z" id="s5-card-1" class="s5-domain-card">
+          <div data-hf-id="hf-9dl6" class="s5-domain-title">SIGNALPROOF LAB · BENCHMIND</div>
+          <div data-hf-id="hf-28zx" class="s5-domain-desc">STM32 4,000 Hz EMG + UART FIXTURE KIT</div>
+        </div>
+
+        <div data-hf-id="hf-oelc" id="s5-card-2" class="s5-domain-card">
+          <div data-hf-id="hf-7u3h" class="s5-domain-title s5-domain-title-orange">ENVIID CARBON SOLUTIONS</div>
+          <div data-hf-id="hf-hu1h" class="s5-domain-desc">CORN COB BIOCHAR · DIGITAL MRV WEB</div>
+        </div>
+
+        <div data-hf-id="hf-l4a1" id="s5-card-3" class="s5-domain-card">
+          <div data-hf-id="hf-wwgs" class="s5-domain-title" style="color: #f4f1ea;">AGY × CODEX VIDEO STUDIO</div>
+          <div data-hf-id="hf-qo63" class="s5-domain-desc">HYPERFRAMES 1080×1920 · FFMPEG-SKILL · PYTEST</div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-x8qu" id="s5-sign" class="s5-footer-sign">
+        <span data-hf-id="hf-eew0" data-var-text="author_name">ARDHYA NOVRI RAMADHAN, S.T.</span>
+        <span data-hf-id="hf-wces" style="color: #10b981;">ardhyanovri.my.id</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const countEl = document.getElementById("s5-rows-count");
+      const proxy = { p: 0 };
+      const easeOutCubic = function (x) {
+        return 1 - Math.pow(1 - x, 3);
+      };
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#s5-hero-ledger",
+        { scale: 0.94, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.38, ease: "expo.out" },
+        0
+      );
+      tl.fromTo(
+        proxy,
+        { p: 0 },
+        {
+          p: 1,
+          duration: 1.25,
+          ease: "none",
+          onUpdate: function () {
+            const v = Math.round(12043 * easeOutCubic(proxy.p));
+            countEl.textContent = v.toLocaleString("en-US") + " / 12,043";
+          },
+        },
+        0.1
+      );
+      tl.fromTo(
+        "#s5-card-1",
+        { x: -45, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        0.65
+      );
+      tl.fromTo(
+        "#s5-card-2",
+        { x: 45, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        0.90
+      );
+      tl.fromTo(
+        "#s5-card-3",
+        { x: -45, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        1.15
+      );
+      tl.fromTo(
+        "#s5-sign",
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" },
+        1.40
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["scene5"] = tl;
+    })();
+  </script>
+</template>

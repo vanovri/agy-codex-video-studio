@@ -1,0 +1,124 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .cap-band {
+      position: absolute;
+      left: 90px;
+      top: 1185px;
+      width: 900px;
+      height: 130px;
+      overflow: visible;
+    }
+    .cap-group {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 900px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .cap-pill {
+      display: inline-block;
+      background: #11151c;
+      border: 3px solid #f4f1ea;
+      box-shadow: 6px 6px 0px #ff4d1c;
+      padding: 14px 26px;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 38px;
+      line-height: 1.15;
+      color: #f4f1ea;
+      letter-spacing: -0.01em;
+    }
+    .cap-accent {
+      color: #10b981;
+    }
+    .cap-hot {
+      color: #ff4d1c;
+    }
+  </style>
+
+  <div data-hf-id="hf-lx10"
+    id="root"
+    data-composition-id="captions"
+    data-width="1080"
+    data-height="1920"
+    data-layout-allow-caption-zone="true"
+  >
+    <div data-hf-id="hf-ski9" id="cap-stage" class="cap-band" data-layout-allow-overlap="true">
+      <div data-hf-id="hf-1d8e" id="cg-01" class="clip cap-group" data-start="0.2" data-duration="2.2">
+        <span data-hf-id="hf-n1ls" class="cap-pill">50 Hz <span data-hf-id="hf-e1rj" class="cap-hot">MAINS HUM</span> CORRUPTS</span>
+      </div>
+      <div data-hf-id="hf-jsfe" id="cg-02" class="clip cap-group" data-start="2.4" data-duration="2.5">
+        <span data-hf-id="hf-vzlm" class="cap-pill">RAW SURFACE <span data-hf-id="hf-o25w" class="cap-accent">EMG SIGNALS</span></span>
+      </div>
+      <div data-hf-id="hf-rz0u" id="cg-03" class="clip cap-group" data-start="5.1" data-duration="3.3">
+        <span data-hf-id="hf-cp1b" class="cap-pill">STM32 CAPTURES <span data-hf-id="hf-7b04" class="cap-accent">4,000 Hz</span> VIA DMA</span>
+      </div>
+      <div data-hf-id="hf-pg6d" id="cg-04" class="clip cap-group" data-start="8.5" data-duration="3.4">
+        <span data-hf-id="hf-sjsm" class="cap-pill"><span data-hf-id="hf-kz2c" class="cap-hot">8,000 SAMPLES</span> LOCK DC BASELINE</span>
+      </div>
+      <div data-hf-id="hf-2ta9" id="cg-05" class="clip cap-group" data-start="12.1" data-duration="3.8">
+        <span data-hf-id="hf-iclr" class="cap-pill">CASCADED <span data-hf-id="hf-t04a" class="cap-accent">BUTTERWORTH BIQUAD</span></span>
+      </div>
+      <div data-hf-id="hf-a72e" id="cg-06" class="clip cap-group" data-start="16.0" data-duration="3.9">
+        <span data-hf-id="hf-1gs0" class="cap-pill">CARVES A <span data-hf-id="hf-jike" class="cap-hot">-25.5 dB</span> NOTCH CANYON</span>
+      </div>
+      <div data-hf-id="hf-bq7d" id="cg-07" class="clip cap-group" data-start="20.1" data-duration="4.2">
+        <span data-hf-id="hf-4o2k" class="cap-pill">GRIP RMS CLIMBS TO <span data-hf-id="hf-h2ff" class="cap-hot">52.71 mV</span></span>
+      </div>
+      <div data-hf-id="hf-8f5s" id="cg-08" class="clip cap-group" data-start="24.4" data-duration="4.1">
+        <span data-hf-id="hf-fcqa" class="cap-pill">PEARSON <span data-hf-id="hf-21fa" class="cap-accent">r = 0.9941</span> LINEARITY</span>
+      </div>
+      <div data-hf-id="hf-ssyb" id="cg-09" class="clip cap-group" data-start="29.05" data-duration="3.55">
+        <span data-hf-id="hf-c8za" class="cap-pill"><span data-hf-id="hf-c4fp" class="cap-accent">12,043 ROWS</span> · ZERO DROPS</span>
+      </div>
+      <div data-hf-id="hf-y0ci" id="cg-10" class="clip cap-group" data-start="32.6" data-duration="3.35">
+        <span data-hf-id="hf-n4kr" class="cap-pill">SIGNALPROOF LAB × <span data-hf-id="hf-ace1" class="cap-hot">ENVIID MRV</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const groups = [
+        { id: "#cg-01", s: 0.2, e: 2.4 },
+        { id: "#cg-02", s: 2.4, e: 4.9 },
+        { id: "#cg-03", s: 5.1, e: 8.4 },
+        { id: "#cg-04", s: 8.5, e: 11.9 },
+        { id: "#cg-05", s: 12.1, e: 15.9 },
+        { id: "#cg-06", s: 16.0, e: 19.9 },
+        { id: "#cg-07", s: 20.1, e: 24.3 },
+        { id: "#cg-08", s: 24.4, e: 28.5 },
+        { id: "#cg-09", s: 29.05, e: 32.58 },
+        { id: "#cg-10", s: 32.6, e: 35.95 },
+      ];
+
+      const tl = gsap.timeline({ paused: true });
+
+      groups.forEach(function (g) {
+        tl.set(g.id, { visibility: "visible", opacity: 0 }, g.s);
+        tl.fromTo(
+          g.id,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.14, ease: "power3.out" },
+          g.s
+        );
+        tl.to(
+          g.id,
+          { opacity: 0, duration: 0.12, ease: "power2.in" },
+          g.e - 0.12
+        );
+        tl.set(g.id, { opacity: 0, visibility: "hidden" }, g.e);
+      });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["captions"] = tl;
+    })();
+  </script>
+</template>

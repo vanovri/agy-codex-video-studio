@@ -1,0 +1,225 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .s3-safe {
+      position: absolute;
+      left: 90px;
+      top: 176px;
+      width: 900px;
+      height: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .s3-top-card {
+      background: #f4f1ea;
+      border: 3px solid #11151c;
+      box-shadow: 10px 10px 0px #ff4d1c;
+      padding: 22px 28px;
+    }
+    .s3-eyebrow {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #c22e00;
+    }
+    .s3-headline {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 48px;
+      color: #11151c;
+      line-height: 1.06;
+      margin-top: 6px;
+    }
+    .s3-webgl-box {
+      position: relative;
+      width: 900px;
+      height: 580px;
+      background: #0b0e13;
+      border: 3px solid #f4f1ea;
+      overflow: hidden;
+    }
+    .s3-overlay-badges {
+      position: absolute;
+      left: 24px;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 3;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .s3-badge-pass {
+      background: #10b981;
+      color: #11151c;
+      padding: 6px 14px;
+    }
+    .s3-badge-notch {
+      background: #ff4d1c;
+      color: #11151c;
+      padding: 6px 14px;
+    }
+    .s3-bottom-specs {
+      display: flex;
+      justify-content: space-between;
+      background: #181e29;
+      border: 3px solid #f4f1ea;
+      padding: 18px 26px;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f4f1ea;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+
+  <div data-hf-id="hf-8h2y" id="root" data-composition-id="scene3" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-0yxz" id="s3-container" class="clip s3-safe" data-start="0" data-duration="8" data-beat="s3-biquad-3d">
+      <div data-hf-id="hf-vev3" id="s3-header" class="s3-top-card">
+        <div data-hf-id="hf-a1jv" class="s3-eyebrow">3D FREQUENCY RESPONSE SURFACE</div>
+        <div data-hf-id="hf-iyrw" class="s3-headline">50 Hz NOTCH CANYON (Q = 30)</div>
+      </div>
+
+      <div data-hf-id="hf-k1gu" id="s3-stage" class="s3-webgl-box" data-layout-allow-overflow="true">
+        <div data-hf-id="hf-iz2m" class="s3-overlay-badges">
+          <span data-hf-id="hf-zyan" class="s3-badge-pass">PASSBAND: 20–500 Hz</span>
+          <span data-hf-id="hf-wx1u" class="s3-badge-notch">50 Hz NOTCH: -25.5 dB</span>
+        </div>
+        <div data-hf-id="hf-h0tj" style="position: absolute; inset: 0;" data-layout-ignore="true">
+          <canvas data-hf-id="hf-cdj5" id="s3-three-canvas" width="900" height="580"></canvas>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-ehff" id="s3-footer" class="s3-bottom-specs">
+        <span data-hf-id="hf-6oa1">DIRECT FORM II TRANSPOSED</span>
+        <span data-hf-id="hf-zke3" style="color: #10b981;">6 COEFFS / STAGE · FP32</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById("s3-three-canvas");
+      const ctx = canvas.getContext("2d");
+
+      // Deterministic 3D isometric surface projection driven purely by scene time t
+      function biquadGainDb(freqHz, notchDepthProgress) {
+        // 2nd-order Butterworth HPF at 20Hz
+        const hpfMag = 1 / Math.sqrt(1 + Math.pow(20 / Math.max(1, freqHz), 4));
+        // 2nd-order Butterworth LPF at 500Hz
+        const lpfMag = 1 / Math.sqrt(1 + Math.pow(freqHz / 500, 4));
+        // 50Hz Q=30 Notch canyon
+        const detune = (freqHz - 50) / 5.5;
+        const notchDip = 1 - 0.947 * notchDepthProgress * Math.exp(-detune * detune);
+        const totalMag = Math.max(0.05, hpfMag * lpfMag * notchDip);
+        return 20 * Math.log10(totalMag); // 0 dB down to -26 dB
+      }
+
+      function projectIso(u, v, z, yaw) {
+        // u in [-1, 1] (frequency axis), v in [-1, 1] (time slices), z in [-1, 0.2] (dB height)
+        const cosA = Math.cos(yaw);
+        const sinA = Math.sin(yaw);
+        const rx = u * cosA - v * sinA;
+        const ry = u * sinA + v * cosA;
+        const sx = 450 + rx * 285;
+        const sy = 398 + ry * 108 - z * 155;
+        return { x: sx, y: sy };
+      }
+
+      function renderSurfaceAt(t) {
+        const w = 900;
+        const h = 580;
+        ctx.clearRect(0, 0, w, h);
+
+        const buildP = Math.min(1, t / 1.4);
+        const notchP = Math.max(0, Math.min(1, (t - 0.5) / 1.5));
+        const yaw = -0.52 + Math.sin(t * 0.45) * 0.18;
+
+        const rows = 18;
+        const cols = 64;
+
+        // Draw back-to-front isometric ribbons
+        for (let r = 0; r < rows; r++) {
+          const v = -1 + (2 * r) / (rows - 1);
+          ctx.beginPath();
+          for (let c = 0; c <= cols; c++) {
+            const uNorm = c / cols;
+            const u = -1 + 2 * uNorm;
+            // Non-linear frequency map emphasizing 0..150Hz and extending to 600Hz
+            const freq = uNorm < 0.35 ? (uNorm / 0.35) * 90 : 90 + ((uNorm - 0.35) / 0.65) * 510;
+            const db = biquadGainDb(freq, notchP) * buildP;
+            const z = (db + 26) / 26; // 0 at -26dB, 1 at 0dB
+            const pt = projectIso(u, v, z, yaw);
+            if (c === 0) ctx.moveTo(pt.x, pt.y);
+            else ctx.lineTo(pt.x, pt.y);
+          }
+          const isNotchSlice = r === Math.floor(rows / 2);
+          ctx.strokeStyle = isNotchSlice ? "#FF4D1C" : "#10B981";
+          ctx.lineWidth = isNotchSlice ? 3.5 : 1.8;
+          ctx.stroke();
+        }
+
+        // Highlight the 50 Hz Notch Canyon cross-section
+        const u50 = -1 + 2 * (50 / 90) * 0.35;
+        const topPt = projectIso(u50, -1, 1.0, yaw);
+        const botPt = projectIso(u50, 1, 0.02, yaw);
+        ctx.strokeStyle = "#FF4D1C";
+        ctx.lineWidth = 3;
+        ctx.setLineDash([8, 6]);
+        ctx.beginPath();
+        ctx.moveTo(topPt.x, topPt.y - 30);
+        ctx.lineTo(botPt.x, botPt.y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Axis labels inside canvas
+        ctx.fillStyle = "#F4F1EA";
+        ctx.font = "700 24px 'Space Mono', monospace";
+        ctx.fillText("20 Hz HPF", 56, 535);
+        ctx.fillStyle = "#FF4D1C";
+        ctx.fillText("50 Hz NOTCH CANYON (-25.5 dB)", 235, 535);
+        ctx.fillStyle = "#F4F1EA";
+        ctx.fillText("500 Hz LPF", 710, 535);
+      }
+
+      const state = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#s3-header",
+        { y: -28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        0
+      );
+      tl.fromTo(
+        "#s3-footer",
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        0.25
+      );
+      tl.fromTo(
+        state,
+        { t: 0 },
+        {
+          t: 8,
+          duration: 8,
+          ease: "none",
+          onUpdate: function () {
+            renderSurfaceAt(state.t);
+          },
+        },
+        0
+      );
+
+      renderSurfaceAt(0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["scene3"] = tl;
+    })();
+  </script>
+</template>

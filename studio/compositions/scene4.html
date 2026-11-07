@@ -1,0 +1,226 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .s4-safe {
+      position: absolute;
+      left: 90px;
+      top: 176px;
+      width: 900px;
+      height: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .s4-title-card {
+      background: #f4f1ea;
+      border: 3px solid #11151c;
+      padding: 22px 28px;
+      box-shadow: 10px 10px 0px #10b981;
+    }
+    .s4-kicker {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #11151c;
+    }
+    .s4-headline {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 46px;
+      color: #11151c;
+      line-height: 1.06;
+      margin-top: 6px;
+    }
+    .s4-chart-panel {
+      background: #0b0e13;
+      border: 3px solid #f4f1ea;
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .s4-bar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .s4-bar-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f4f1ea;
+      font-variant-numeric: tabular-nums;
+    }
+    .s4-bar-track {
+      width: 100%;
+      height: 44px;
+      background: #181e29;
+      border: 2px solid #475569;
+      position: relative;
+      overflow: hidden;
+    }
+    .s4-bar-fill {
+      height: 100%;
+      width: 100%;
+      background: #94a3b8;
+      transform-origin: left center;
+    }
+    .s4-bar-fill-hero {
+      background: #ff4d1c;
+    }
+    .s4-bar-fill-mid {
+      background: #10b981;
+    }
+    .s4-callout-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ff4d1c;
+      border: 3px solid #f4f1ea;
+      padding: 18px 26px;
+    }
+    .s4-callout-label {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 30px;
+      color: #11151c;
+      white-space: nowrap;
+    }
+    .s4-callout-stat {
+      font-family: "Space Mono", monospace;
+      font-size: 29px;
+      font-weight: 700;
+      color: #11151c;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .s4-source {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+  </style>
+
+  <div data-hf-id="hf-7c3z" id="root" data-composition-id="scene4" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-0050" id="s4-container" class="clip s4-safe" data-start="0" data-duration="9" data-beat="s4-dataviz">
+      <div data-hf-id="hf-vckp" id="s4-hdr" class="s4-title-card">
+        <div data-hf-id="hf-tj4t" class="s4-kicker">EMPIRICAL GRIP FORCE PROGRESSION</div>
+        <div data-hf-id="hf-yzky" class="s4-headline">RMS ENVELOPE (400-SAMPLE WINDOW)</div>
+      </div>
+
+      <div data-hf-id="hf-29z3" id="s4-chart" class="s4-chart-panel">
+        <div data-hf-id="hf-p58u" class="s4-bar-row">
+          <div data-hf-id="hf-r9td" class="s4-bar-meta">
+            <span data-hf-id="hf-746v">RELAXED BASELINE</span>
+            <span data-hf-id="hf-k9rn" id="s4-val-1">7.64 mV</span>
+          </div>
+          <div data-hf-id="hf-8vqn" class="s4-bar-track">
+            <div data-hf-id="hf-u0q8" id="s4-bar-1" class="s4-bar-fill"></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-t5ua" class="s4-bar-row">
+          <div data-hf-id="hf-vrdx" class="s4-bar-meta">
+            <span data-hf-id="hf-ydw1">LIGHT GRIP</span>
+            <span data-hf-id="hf-v9wh" id="s4-val-2">16.10 mV</span>
+          </div>
+          <div data-hf-id="hf-t973" class="s4-bar-track">
+            <div data-hf-id="hf-4w7v" id="s4-bar-2" class="s4-bar-fill"></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-tk5b" class="s4-bar-row">
+          <div data-hf-id="hf-wyb0" class="s4-bar-meta">
+            <span data-hf-id="hf-xjiz">MEDIUM GRIP (RPE 5)</span>
+            <span data-hf-id="hf-y9u8" id="s4-val-3" style="color: #10b981;">38.52 mV</span>
+          </div>
+          <div data-hf-id="hf-suw2" class="s4-bar-track">
+            <div data-hf-id="hf-p60m" id="s4-bar-3" class="s4-bar-fill s4-bar-fill-mid"></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-tygc" class="s4-bar-row">
+          <div data-hf-id="hf-wjzz" class="s4-bar-meta">
+            <span data-hf-id="hf-jz1g" style="color: #ff4d1c;">STRONG MAXIMUM GRIP</span>
+            <span data-hf-id="hf-xlyl" id="s4-val-4" style="color: #ff4d1c;">52.71 mV</span>
+          </div>
+          <div data-hf-id="hf-sgl1" class="s4-bar-track">
+            <div data-hf-id="hf-878x" id="s4-bar-4" class="s4-bar-fill s4-bar-fill-hero"></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-sbnd" class="s4-source">SOURCE: UNDIP LAB · N = 12,043 ROWS (602.1 s)</div>
+      </div>
+
+      <div data-hf-id="hf-c89d" id="s4-callout" class="s4-callout-row">
+        <span data-hf-id="hf-daej" class="s4-callout-label">RMS–MAV CORRELATION</span>
+        <span data-hf-id="hf-y0qn" class="s4-callout-stat">r = 0.9941 (r² = 0.988)</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const targets = [
+        { bar: "#s4-bar-1", label: document.getElementById("s4-val-1"), maxMv: 7.64, ratio: 7.64 / 60.0, start: 0.35 },
+        { bar: "#s4-bar-2", label: document.getElementById("s4-val-2"), maxMv: 16.10, ratio: 16.10 / 60.0, start: 0.85 },
+        { bar: "#s4-bar-3", label: document.getElementById("s4-val-3"), maxMv: 38.52, ratio: 38.52 / 60.0, start: 1.35 },
+        { bar: "#s4-bar-4", label: document.getElementById("s4-val-4"), maxMv: 52.71, ratio: 52.71 / 60.0, start: 1.90 },
+      ];
+
+      const easeOutCubic = function (x) {
+        return 1 - Math.pow(1 - x, 3);
+      };
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#s4-hdr",
+        { y: -24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.36, ease: "expo.out" },
+        0
+      );
+
+      targets.forEach(function (item) {
+        const proxy = { p: 0 };
+        tl.fromTo(
+          item.bar,
+          { scaleX: 0 },
+          { scaleX: item.ratio, duration: 1.35, ease: "power3.out" },
+          item.start
+        );
+        tl.fromTo(
+          proxy,
+          { p: 0 },
+          {
+            p: 1,
+            duration: 1.35,
+            ease: "none",
+            onUpdate: function () {
+              const v = item.maxMv * easeOutCubic(proxy.p);
+              item.label.textContent = v.toFixed(2) + " mV";
+            },
+          },
+          item.start
+        );
+      });
+
+      tl.fromTo(
+        "#s4-callout",
+        { y: 32, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.42, ease: "expo.out" },
+        3.2
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["scene4"] = tl;
+    })();
+  </script>
+</template>

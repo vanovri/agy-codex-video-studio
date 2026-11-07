@@ -1,0 +1,31 @@
+1
+00:00:00,150 --> 00:00:02,950
+STM32F411 captures 4,000 Hz EMG via DMA
+
+2
+00:00:03,050 --> 00:00:05,850
+Butterworth 20-500 Hz + Q=30 Notch locks r=0.994
+
+3
+00:00:06,150 --> 00:00:08,950
+UART Fixture Kit v0.1.0: 130 pytest pass
+
+4
+00:00:09,050 --> 00:00:11,850
+15/15 synthetic stream fixtures & CRC-32 stress
+
+5
+00:00:12,150 --> 00:00:14,950
+BenchMind v0.2.0 recovers 1,997/1,997 UART frames
+
+6
+00:00:15,050 --> 00:00:17,850
+25.5 dB 50 Hz hum suppression & AI root-cause copilot
+
+7
+00:00:18,150 --> 00:00:20,950
+Packing Arena v0.1.0 interactive 2D bin-packing
+
+8
+00:00:21,050 --> 00:00:23,850
+Explore full-stack proofs at ardhyanovri.my.id

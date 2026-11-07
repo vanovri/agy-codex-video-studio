@@ -1,0 +1,14 @@
+# Python cache & coverage artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# HyperFrames local render cache
+studio/.hyperframes/

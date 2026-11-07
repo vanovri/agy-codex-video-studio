@@ -1,0 +1,267 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .s1-safe {
+      position: absolute;
+      left: 90px;
+      top: 176px;
+      width: 900px;
+      height: 980px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 22px;
+    }
+    .s1-kicker-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #f4f1ea;
+      padding-bottom: 14px;
+    }
+    .s1-kicker-tag {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #11151c;
+      background: #ff4d1c;
+      padding: 6px 16px;
+      letter-spacing: 0.02em;
+    }
+    .s1-kicker-meta {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f4f1ea;
+      font-variant-numeric: tabular-nums;
+    }
+    .s1-hero-box {
+      background: #f4f1ea;
+      border: 3px solid #11151c;
+      box-shadow: 10px 10px 0px #ff4d1c;
+      padding: 28px 32px;
+    }
+    .s1-freq {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 104px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #11151c;
+      font-variant-numeric: tabular-nums;
+    }
+    .s1-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 54px;
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: #11151c;
+      margin-top: 10px;
+    }
+    .s1-scope-card {
+      position: relative;
+      width: 900px;
+      height: 460px;
+      background: #0b0e13;
+      border: 3px solid #f4f1ea;
+      overflow: hidden;
+    }
+    .s1-scope-header {
+      position: absolute;
+      left: 24px;
+      top: 18px;
+      right: 24px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 3;
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .s1-status-bad {
+      color: #ff4d1c;
+    }
+    .s1-status-good {
+      color: #10b981;
+    }
+    .s1-canvas-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .s1-bottom-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #10b981;
+      border: 3px solid #f4f1ea;
+      padding: 18px 28px;
+    }
+    .s1-bottom-text {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 40px;
+      color: #11151c;
+      letter-spacing: -0.01em;
+    }
+    .s1-bottom-val {
+      font-family: "Space Mono", monospace;
+      font-size: 38px;
+      font-weight: 700;
+      color: #11151c;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+
+  <div data-hf-id="hf-dfts" id="root" data-composition-id="scene1" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-9oq3" id="s1-frame" class="clip s1-safe" data-start="0" data-duration="5" data-beat="s1-hook">
+      <div data-hf-id="hf-sgqs" id="s1-kicker-wrap" class="s1-kicker-row">
+        <span data-hf-id="hf-y3ux" class="s1-kicker-tag">SIGNALPROOF LAB · STM32F411</span>
+        <span data-hf-id="hf-vic4" class="s1-kicker-meta">ADC1 PA0 · SEN0240</span>
+      </div>
+
+      <div data-hf-id="hf-mxgn" id="s1-hero-card" class="s1-hero-box">
+        <div data-hf-id="hf-q0bl" id="s1-hero-inner">
+          <div data-hf-id="hf-y1cb" class="s1-freq" data-var-text="hero_freq">4,000 Hz</div>
+          <div data-hf-id="hf-h15i" class="s1-title">REAL-TIME EMG BIQUAD FILTER</div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-gi2q" id="s1-scope" class="s1-scope-card" data-layout-allow-overflow="true">
+        <div data-hf-id="hf-oi9j" class="s1-scope-header">
+          <span data-hf-id="hf-cvg9" id="s1-label-raw" class="s1-status-bad">RAW: 50 Hz MAINS HUM</span>
+          <span data-hf-id="hf-9w23" id="s1-label-clean" class="s1-status-good">BIQUAD: -25.5 dB CLEAN</span>
+        </div>
+        <div data-hf-id="hf-g71j" class="s1-canvas-wrap" data-layout-ignore="true">
+          <canvas data-hf-id="hf-nqrl" id="s1-wave-canvas" width="900" height="460"></canvas>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-yux8" id="s1-banner" class="s1-bottom-banner">
+        <span data-hf-id="hf-5ihv" class="s1-bottom-text">50 Hz NOTCH SUPPRESSION</span>
+        <span data-hf-id="hf-btti" class="s1-bottom-val" data-var-text="notch_db">-25.5 dB</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById("s1-wave-canvas");
+      const ctx = canvas.getContext("2d");
+
+      function drawOscilloscope(t) {
+        const w = 900;
+        const h = 460;
+        ctx.clearRect(0, 0, w, h);
+
+        // Grid lines
+        ctx.strokeStyle = "rgba(244, 241, 234, 0.08)";
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= w; x += 60) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, h);
+          ctx.stroke();
+        }
+        for (let y = 0; y <= h; y += 60) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+
+        // Shutter split progress: starts at t=1.2s, completes across width by t=2.4s
+        const wipeProgress = Math.max(0, Math.min(1, (t - 1.1) / 1.2));
+        const splitX = Math.round(w * (1 - wipeProgress * 0.62)); // Leaves 38% raw on left, 62% clean on right
+
+        const phase = t * 14.0;
+        const midY = 250;
+
+        // Draw RAW noisy 50Hz waveform on left of splitX
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(0, 0, splitX, h);
+        ctx.clip();
+        ctx.strokeStyle = "#FF4D1C";
+        ctx.lineWidth = 4.5;
+        ctx.beginPath();
+        for (let x = 0; x <= splitX; x += 3) {
+          const u = x / w;
+          const hum50 = Math.sin(u * 38.0 + phase * 2.2) * 95;
+          const harmonics = Math.sin(u * 114.0 - phase * 3.4) * 32;
+          const burst = Math.sin(u * 180.0 + phase * 4.0) * 42 * Math.exp(-Math.pow((u - 0.25) / 0.14, 2));
+          const y = midY + hum50 + harmonics + burst;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        // Draw CLEAN filtered Butterworth + Notch EMG waveform on right of splitX
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(splitX, 0, w - splitX, h);
+        ctx.clip();
+        ctx.strokeStyle = "#10B981";
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        for (let x = splitX; x <= w; x += 3) {
+          const u = x / w;
+          const env1 = Math.exp(-Math.pow((u - 0.55) / 0.09, 2));
+          const env2 = Math.exp(-Math.pow((u - 0.82) / 0.08, 2));
+          const motorUnit =
+            (Math.sin(u * 190.0 + phase * 3.0) * 85 +
+              Math.cos(u * 310.0 - phase * 4.5) * 48) *
+            (env1 + 0.85 * env2);
+          const residual = Math.sin(u * 38.0 + phase) * 4.5;
+          const y = midY + motorUnit + residual;
+          if (x === splitX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        // Vertical shutter bar
+        ctx.fillStyle = "#F4F1EA";
+        ctx.fillRect(splitX - 3, 68, 6, h - 80);
+      }
+
+      const state = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+
+      // Frame 0 is already alive with the hero headline and raw trace; animate shutter & banner
+      tl.fromTo(
+        "#s1-hero-inner",
+        { y: 18, opacity: 0.92 },
+        { y: 0, opacity: 1, duration: 0.35, ease: "expo.out" },
+        0
+      );
+      tl.fromTo(
+        "#s1-banner",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.42, ease: "power4.out" },
+        1.15
+      );
+      tl.fromTo(
+        state,
+        { t: 0 },
+        {
+          t: 5,
+          duration: 5,
+          ease: "none",
+          onUpdate: function () {
+            drawOscilloscope(state.t);
+          },
+        },
+        0
+      );
+
+      drawOscilloscope(0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["scene1"] = tl;
+    })();
+  </script>
+</template>

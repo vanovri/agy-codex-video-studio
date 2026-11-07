@@ -1,0 +1,920 @@
+{
+  "title": "BenchMind v0.2.0 — AI Root-Cause Hardware Copilot & Signal Recovery",
+  "hackathon": "Meta Global AI Developer Hackathon (Team ID 1429535549246922)",
+  "author": "Ardhya Novri Ramadhan, S.T.",
+  "portfolio_url": "https://ardhyanovri.my.id/",
+  "repository_url": "https://github.com/vanovri",
+  "output_video": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080.mp4",
+  "companion_srt": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080.srt",
+  "companion_json": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080.json",
+  "contact_sheet": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080_sheet.png",
+  "soundtrack_wav": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080-soundtrack.wav",
+  "spec": {
+    "width": 1920,
+    "height": 1080,
+    "aspect_ratio": "16:9",
+    "fps": 30,
+    "duration_sec": 24.0,
+    "total_frames": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2
+  },
+  "probe_verification": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "duration_sec": 24.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "has_audio": true,
+    "file_size_bytes": 3292690,
+    "raw": {
+      "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080.mp4",
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 24.0,
+      "start_time": 0.0,
+      "size_bytes": 3292690,
+      "bitrate": 1097563,
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "display_aspect": "16:9",
+        "fps": 30.0,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "variable_frame_rate_suspected": false,
+        "pix_fmt": "yuv420p",
+        "bit_depth": 8,
+        "hdr": false,
+        "hdr_signal": false,
+        "bt2020_or_hdr": false,
+        "hdr_format": null,
+        "dolby_vision": null,
+        "color_space": "bt709",
+        "color_primaries": null,
+        "color_transfer": null,
+        "color_range": "tv",
+        "rotation": 0,
+        "nb_frames": 720,
+        "duration": 24.0,
+        "tagged_duration": null,
+        "start_time": 0.0,
+        "bitrate": 891060
+      },
+      "audio": {
+        "codec": "aac",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "sample_rate": 48000,
+        "bitrate": 197138,
+        "duration": 24.0,
+        "start_time": 0.0,
+        "tagged_duration": null
+      },
+      "subtitle_streams": 0,
+      "data_streams": 0,
+      "stream_counts": {
+        "video": 1,
+        "audio": 1
+      },
+      "chapters": [],
+      "tags": {},
+      "timecode": {
+        "value": null,
+        "drop_frame": null,
+        "source": null
+      },
+      "subtitle_stream_details": [],
+      "audio_streams": [
+        {
+          "index": 0,
+          "codec": "aac",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "sample_rate": 48000,
+          "language": "und",
+          "title": null
+        }
+      ]
+    }
+  },
+  "soundtrack": {
+    "file": "C:\\Users\\ardhy\\Projects\\agy-codex-video-studio\\outputs\\benchmind-v02-hackathon-demo-1920x1080-soundtrack.wav",
+    "duration_sec": 24.0,
+    "sample_rate": 48000,
+    "channels": 2,
+    "bpm": 120.0,
+    "beats": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0,
+      10.5,
+      11.0,
+      11.5,
+      12.0,
+      12.5,
+      13.0,
+      13.5,
+      14.0,
+      14.5,
+      15.0,
+      15.5,
+      16.0,
+      16.5,
+      17.0,
+      17.5,
+      18.0,
+      18.5,
+      19.0,
+      19.5,
+      20.0,
+      20.5,
+      21.0,
+      21.5,
+      22.0,
+      22.5,
+      23.0,
+      23.5
+    ],
+    "scene_cues": {
+      "scene_1": {
+        "t_start": 0.0,
+        "t_end": 5.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Hook: 50 Hz Hum Corrupts"
+      },
+      "scene_2": {
+        "t_start": 5.0,
+        "t_end": 12.0,
+        "root": "Bb1",
+        "key": "Bb major",
+        "label": "Pipeline: STM32 4,000 Hz DMA"
+      },
+      "scene_3": {
+        "t_start": 12.0,
+        "t_end": 20.0,
+        "root": "F2",
+        "key": "F major",
+        "label": "Biquad: -25.5 dB Notch Canyon"
+      },
+      "scene_4": {
+        "t_start": 20.0,
+        "t_end": 24.0,
+        "root": "C2",
+        "key": "C major",
+        "label": "Data-Viz: Grip RMS Pearson r=0.9941"
+      },
+      "pre_payoff_break": {
+        "t_start": 28.5,
+        "t_end": 24.0,
+        "label": "0.5s Pre-Payoff Silence Break"
+      },
+      "scene_5": {
+        "t_start": 29.0,
+        "t_end": 24.0,
+        "root": "D2",
+        "key": "D minor",
+        "label": "Payoff: 12,043 Rows Zero Drops Ledger"
+      }
+    },
+    "peak_dbfs": -5.72,
+    "rms_dbfs": -14.73
+  },
+  "scenes": [
+    {
+      "scene_id": "bm_scene_01_problem_hardware",
+      "index": 1,
+      "start_sec": 0.0,
+      "end_sec": 6.0,
+      "title": "PROBLEM & STM32F411 HARDWARE SETUP",
+      "subtitle": "SEN0240 EMG @ 4,000 Hz ADC+DMA · 50 Hz Mains Hum, +150.25 mV DC Offset & Corrupted UART",
+      "metrics": [
+        {
+          "label": "NOMINAL SAMPLING",
+          "value": "4,000 Hz",
+          "detail": "STM32F411CEU6 ADC1 PA0 + Circular DMA"
+        },
+        {
+          "label": "PA0 DC OFFSET",
+          "value": "+150.25 mV",
+          "detail": "Electrode Half-Cell + Bias Drift on PA0"
+        },
+        {
+          "label": "NOISE CORRUPTION",
+          "value": "50 Hz + CRC",
+          "detail": "Mains Hum + Fragmented UART Byte Streams"
+        }
+      ]
+    },
+    {
+      "scene_id": "bm_scene_02_signal_frame_recovery",
+      "index": 2,
+      "start_sec": 6.0,
+      "end_sec": 12.0,
+      "title": "1,997 / 1,997 UART RECOVERY & -25.5 dB NOTCH",
+      "subtitle": "+1,988 Frames Over Naive Parser · 3 CRC-32 Bit-Flips Isolated [17, 63, 142] · +17.02 dB SNR",
+      "metrics": [
+        {
+          "label": "UART RECOVERY",
+          "value": "1,997 / 1,997",
+          "detail": "100% Valid Frames (+1,988 vs Naive Parser)"
+        },
+        {
+          "label": "CRC-32 BIT-FLIPS",
+          "value": "[17, 63, 142]",
+          "detail": "3 Corrupted Frames Deterministically Isolated"
+        },
+        {
+          "label": "50 Hz ATTENUATION",
+          "value": "-25.5 dB",
+          "detail": "Cascaded Biquad Q=30 · +17.02 dB SNR Gain"
+        }
+      ]
+    },
+    {
+      "scene_id": "bm_scene_03_ai_copilot",
+      "index": 3,
+      "start_sec": 12.0,
+      "end_sec": 18.0,
+      "title": "RANKED HYPOTHESES & CITATION GUARDRAILS",
+      "subtitle": "RC-1..RC-4 Root-Cause Ranking · Strict E1-E6 / F1-F5 Evidence IDs · PA-1..PA-4 Probe Actions",
+      "metrics": [
+        {
+          "label": "HYPOTHESIS LEDGER",
+          "value": "RC-1 .. RC-4",
+          "detail": "Ranked Posterior Fault Isolation Engine"
+        },
+        {
+          "label": "EVIDENCE GUARDRAIL",
+          "value": "E1-E6 / F1-F5",
+          "detail": "100% Grounded Telemetry & Firmware Citations"
+        },
+        {
+          "label": "PROBE CHECKLIST",
+          "value": "PA-1 .. PA-4",
+          "detail": "Actionable STM32 Oscilloscope & Grounding Steps"
+        }
+      ]
+    },
+    {
+      "scene_id": "bm_scene_04_sponsor_stack",
+      "index": 4,
+      "start_sec": 18.0,
+      "end_sec": 24.0,
+      "title": "META LLAMA + BASETEN + FIREWORKS + MODAL",
+      "subtitle": "Meta Llama / Muse Spark · Baseten Low-Latency · Fireworks JSON Tools · Modal DSP (33/33 PASS)",
+      "metrics": [
+        {
+          "label": "FOUNDATION & SERVING",
+          "value": "LLAMA + BASETEN",
+          "detail": "Meta Llama / Muse Spark on Baseten TensorRT"
+        },
+        {
+          "label": "STRUCTURED TOOLS",
+          "value": "FIREWORKS AI",
+          "detail": "Strict JSON Schema Hypothesis & Citation Calls"
+        },
+        {
+          "label": "SERVERLESS DSP & CI",
+          "value": "MODAL · 33 PASS",
+          "detail": "Parallel Replay Worker · 33/33 Pytest Verified"
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "id": "benchmind_cg_01",
+      "text": "STM32F411 captures 4,000 Hz EMG with +150.25 mV offset",
+      "start": 0.15,
+      "end": 2.95,
+      "words": [
+        {
+          "word": "STM32F411",
+          "start": 0.15,
+          "end": 0.43,
+          "score": 0.99
+        },
+        {
+          "word": "captures",
+          "start": 0.461,
+          "end": 0.741,
+          "score": 0.99
+        },
+        {
+          "word": "4,000",
+          "start": 0.772,
+          "end": 1.052,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 1.083,
+          "end": 1.363,
+          "score": 0.99
+        },
+        {
+          "word": "EMG",
+          "start": 1.394,
+          "end": 1.674,
+          "score": 0.99
+        },
+        {
+          "word": "with",
+          "start": 1.706,
+          "end": 1.986,
+          "score": 0.99
+        },
+        {
+          "word": "+150.25",
+          "start": 2.017,
+          "end": 2.297,
+          "score": 0.99
+        },
+        {
+          "word": "mV",
+          "start": 2.328,
+          "end": 2.608,
+          "score": 0.99
+        },
+        {
+          "word": "offset",
+          "start": 2.639,
+          "end": 2.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_02",
+      "text": "50 Hz mains hum and UART corruption break naive parsers",
+      "start": 3.05,
+      "end": 5.85,
+      "words": [
+        {
+          "word": "50",
+          "start": 3.05,
+          "end": 3.302,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 3.33,
+          "end": 3.582,
+          "score": 0.99
+        },
+        {
+          "word": "mains",
+          "start": 3.61,
+          "end": 3.862,
+          "score": 0.99
+        },
+        {
+          "word": "hum",
+          "start": 3.89,
+          "end": 4.142,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 4.17,
+          "end": 4.422,
+          "score": 0.99
+        },
+        {
+          "word": "UART",
+          "start": 4.45,
+          "end": 4.702,
+          "score": 0.99
+        },
+        {
+          "word": "corruption",
+          "start": 4.73,
+          "end": 4.982,
+          "score": 0.99
+        },
+        {
+          "word": "break",
+          "start": 5.01,
+          "end": 5.262,
+          "score": 0.99
+        },
+        {
+          "word": "naive",
+          "start": 5.29,
+          "end": 5.542,
+          "score": 0.99
+        },
+        {
+          "word": "parsers",
+          "start": 5.57,
+          "end": 5.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_03",
+      "text": "Recovers 1,997/1,997 valid frames and isolates 3 CRC-32 flips",
+      "start": 6.15,
+      "end": 8.95,
+      "words": [
+        {
+          "word": "Recovers",
+          "start": 6.15,
+          "end": 6.43,
+          "score": 0.99
+        },
+        {
+          "word": "1,997/1,997",
+          "start": 6.461,
+          "end": 6.741,
+          "score": 0.99
+        },
+        {
+          "word": "valid",
+          "start": 6.772,
+          "end": 7.052,
+          "score": 0.99
+        },
+        {
+          "word": "frames",
+          "start": 7.083,
+          "end": 7.363,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 7.394,
+          "end": 7.674,
+          "score": 0.99
+        },
+        {
+          "word": "isolates",
+          "start": 7.706,
+          "end": 7.986,
+          "score": 0.99
+        },
+        {
+          "word": "3",
+          "start": 8.017,
+          "end": 8.297,
+          "score": 0.99
+        },
+        {
+          "word": "CRC-32",
+          "start": 8.328,
+          "end": 8.608,
+          "score": 0.99
+        },
+        {
+          "word": "flips",
+          "start": 8.639,
+          "end": 8.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_04",
+      "text": "Cascaded biquad notch cuts 50 Hz hum by 25.5 dB (+17.02 dB SNR)",
+      "start": 9.05,
+      "end": 11.85,
+      "words": [
+        {
+          "word": "Cascaded",
+          "start": 9.05,
+          "end": 9.244,
+          "score": 0.99
+        },
+        {
+          "word": "biquad",
+          "start": 9.265,
+          "end": 9.459,
+          "score": 0.99
+        },
+        {
+          "word": "notch",
+          "start": 9.481,
+          "end": 9.675,
+          "score": 0.99
+        },
+        {
+          "word": "cuts",
+          "start": 9.696,
+          "end": 9.89,
+          "score": 0.99
+        },
+        {
+          "word": "50",
+          "start": 9.912,
+          "end": 10.106,
+          "score": 0.99
+        },
+        {
+          "word": "Hz",
+          "start": 10.127,
+          "end": 10.321,
+          "score": 0.99
+        },
+        {
+          "word": "hum",
+          "start": 10.342,
+          "end": 10.536,
+          "score": 0.99
+        },
+        {
+          "word": "by",
+          "start": 10.558,
+          "end": 10.752,
+          "score": 0.99
+        },
+        {
+          "word": "25.5",
+          "start": 10.773,
+          "end": 10.967,
+          "score": 0.99
+        },
+        {
+          "word": "dB",
+          "start": 10.988,
+          "end": 11.182,
+          "score": 0.99
+        },
+        {
+          "word": "(+17.02",
+          "start": 11.204,
+          "end": 11.398,
+          "score": 0.99
+        },
+        {
+          "word": "dB",
+          "start": 11.419,
+          "end": 11.613,
+          "score": 0.99
+        },
+        {
+          "word": "SNR)",
+          "start": 11.635,
+          "end": 11.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_05",
+      "text": "BenchMind v0.2.0 ranks RC-1 to RC-4 with E1-E6 citations",
+      "start": 12.15,
+      "end": 14.95,
+      "words": [
+        {
+          "word": "BenchMind",
+          "start": 12.15,
+          "end": 12.43,
+          "score": 0.99
+        },
+        {
+          "word": "v0.2.0",
+          "start": 12.461,
+          "end": 12.741,
+          "score": 0.99
+        },
+        {
+          "word": "ranks",
+          "start": 12.772,
+          "end": 13.052,
+          "score": 0.99
+        },
+        {
+          "word": "RC-1",
+          "start": 13.083,
+          "end": 13.363,
+          "score": 0.99
+        },
+        {
+          "word": "to",
+          "start": 13.394,
+          "end": 13.674,
+          "score": 0.99
+        },
+        {
+          "word": "RC-4",
+          "start": 13.706,
+          "end": 13.986,
+          "score": 0.99
+        },
+        {
+          "word": "with",
+          "start": 14.017,
+          "end": 14.297,
+          "score": 0.99
+        },
+        {
+          "word": "E1-E6",
+          "start": 14.328,
+          "end": 14.608,
+          "score": 0.99
+        },
+        {
+          "word": "citations",
+          "start": 14.639,
+          "end": 14.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_06",
+      "text": "Generates PA-1 to PA-4 STM32 hardware bench probe actions",
+      "start": 15.05,
+      "end": 17.85,
+      "words": [
+        {
+          "word": "Generates",
+          "start": 15.05,
+          "end": 15.33,
+          "score": 0.99
+        },
+        {
+          "word": "PA-1",
+          "start": 15.361,
+          "end": 15.641,
+          "score": 0.99
+        },
+        {
+          "word": "to",
+          "start": 15.672,
+          "end": 15.952,
+          "score": 0.99
+        },
+        {
+          "word": "PA-4",
+          "start": 15.983,
+          "end": 16.263,
+          "score": 0.99
+        },
+        {
+          "word": "STM32",
+          "start": 16.294,
+          "end": 16.574,
+          "score": 0.99
+        },
+        {
+          "word": "hardware",
+          "start": 16.606,
+          "end": 16.886,
+          "score": 0.99
+        },
+        {
+          "word": "bench",
+          "start": 16.917,
+          "end": 17.197,
+          "score": 0.99
+        },
+        {
+          "word": "probe",
+          "start": 17.228,
+          "end": 17.508,
+          "score": 0.99
+        },
+        {
+          "word": "actions",
+          "start": 17.539,
+          "end": 17.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_07",
+      "text": "Powered by Meta Llama, Baseten, Fireworks AI, and Modal",
+      "start": 18.15,
+      "end": 20.95,
+      "words": [
+        {
+          "word": "Powered",
+          "start": 18.15,
+          "end": 18.43,
+          "score": 0.99
+        },
+        {
+          "word": "by",
+          "start": 18.461,
+          "end": 18.741,
+          "score": 0.99
+        },
+        {
+          "word": "Meta",
+          "start": 18.772,
+          "end": 19.052,
+          "score": 0.99
+        },
+        {
+          "word": "Llama,",
+          "start": 19.083,
+          "end": 19.363,
+          "score": 0.99
+        },
+        {
+          "word": "Baseten,",
+          "start": 19.394,
+          "end": 19.674,
+          "score": 0.99
+        },
+        {
+          "word": "Fireworks",
+          "start": 19.706,
+          "end": 19.986,
+          "score": 0.99
+        },
+        {
+          "word": "AI,",
+          "start": 20.017,
+          "end": 20.297,
+          "score": 0.99
+        },
+        {
+          "word": "and",
+          "start": 20.328,
+          "end": 20.608,
+          "score": 0.99
+        },
+        {
+          "word": "Modal",
+          "start": 20.639,
+          "end": 20.95,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    },
+    {
+      "id": "benchmind_cg_08",
+      "text": "33/33 pytest pass — Team 1429535549246922 verified",
+      "start": 21.05,
+      "end": 23.85,
+      "words": [
+        {
+          "word": "33/33",
+          "start": 21.05,
+          "end": 21.41,
+          "score": 0.99
+        },
+        {
+          "word": "pytest",
+          "start": 21.45,
+          "end": 21.81,
+          "score": 0.99
+        },
+        {
+          "word": "pass",
+          "start": 21.85,
+          "end": 22.21,
+          "score": 0.99
+        },
+        {
+          "word": "—",
+          "start": 22.25,
+          "end": 22.61,
+          "score": 0.99
+        },
+        {
+          "word": "Team",
+          "start": 22.65,
+          "end": 23.01,
+          "score": 0.99
+        },
+        {
+          "word": "1429535549246922",
+          "start": 23.05,
+          "end": 23.41,
+          "score": 0.99
+        },
+        {
+          "word": "verified",
+          "start": 23.45,
+          "end": 23.85,
+          "score": 0.99
+        }
+      ],
+      "safe_box": {
+        "x": 56,
+        "y": 852,
+        "w": 1174,
+        "h": 88
+      }
+    }
+  ],
+  "verified_proof": {
+    "team_id": "1429535549246922",
+    "version": "v0.2.0",
+    "hardware": "STM32F411CEU6 + DFRobot SEN0240 EMG @ 4,000 Hz ADC+DMA",
+    "pa0_dc_offset_mv": 150.25,
+    "uart_frames_recovered": "1,997/1,997 (100%)",
+    "uart_gain_over_naive": "+1,988 frames",
+    "crc32_bit_flips_isolated": [
+      17,
+      63,
+      142
+    ],
+    "hum_50hz_attenuation_db": -25.5,
+    "snr_improvement_db": 17.02,
+    "hypotheses": [
+      "RC-1",
+      "RC-2",
+      "RC-3",
+      "RC-4"
+    ],
+    "evidence_citations": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5"
+    ],
+    "probe_actions": [
+      "PA-1",
+      "PA-2",
+      "PA-3",
+      "PA-4"
+    ],
+    "sponsors": [
+      "Meta Llama / Muse Spark",
+      "Baseten",
+      "Fireworks AI",
+      "Modal"
+    ],
+    "pytest_passed": "33/33"
+  }
+}

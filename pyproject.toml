@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agy-codex-video-studio"
+version = "0.1.0"
+description = "AGY x Codex Video Studio — Multi-Agent Video & Motion Graphics Pipeline (FFmpeg Skill + Ghost Editor + Claude Shorts + MotionClone + HyperFrames)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+agy-codex-studio = "agy_codex_studio.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,197 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .s2-safe {
+      position: absolute;
+      left: 90px;
+      top: 176px;
+      width: 900px;
+      height: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .s2-header {
+      background: #f4f1ea;
+      border: 3px solid #11151c;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 8px 8px 0px #10b981;
+    }
+    .s2-header-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 46px;
+      color: #11151c;
+      line-height: 1.05;
+    }
+    .s2-header-chip {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      background: #11151c;
+      color: #f4f1ea;
+      padding: 8px 16px;
+    }
+    .s2-counter-card {
+      background: #0b0e13;
+      border: 3px solid #f4f1ea;
+      padding: 24px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .s2-counter-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .s2-counter-label {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .s2-counter-num {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 76px;
+      color: #ff4d1c;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .s2-counter-right {
+      text-align: right;
+      font-family: "Space Mono", monospace;
+      font-size: 30px;
+      font-weight: 700;
+      color: #10b981;
+      font-variant-numeric: tabular-nums;
+    }
+    .s2-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .s2-stage {
+      background: #181e29;
+      border: 3px solid #f4f1ea;
+      padding: 20px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .s2-stage-active {
+      border-color: #10b981;
+      background: #132220;
+    }
+    .s2-stage-name {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 34px;
+      color: #f4f1ea;
+    }
+    .s2-stage-spec {
+      font-family: "Space Mono", monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #10b981;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+
+  <div data-hf-id="hf-obq5" id="root" data-composition-id="scene2" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-sc8h" id="s2-container" class="clip s2-safe" data-start="0" data-duration="7" data-beat="s2-pipeline">
+      <div data-hf-id="hf-nsrn" id="s2-hdr" class="s2-header">
+        <span data-hf-id="hf-694h" class="s2-header-title">BARE-METAL DMA PIPELINE</span>
+        <span data-hf-id="hf-pwk5" class="s2-header-chip">STM32F411CEU6</span>
+      </div>
+
+      <div data-hf-id="hf-qxk0" id="s2-calib-box" class="s2-counter-card">
+        <div data-hf-id="hf-cn62" class="s2-counter-left">
+          <span data-hf-id="hf-00xr" class="s2-counter-label">DC OFFSET CALIBRATION LOCK</span>
+          <span data-hf-id="hf-vdtn" id="s2-sample-count" class="s2-counter-num">8,000 SAMPLES</span>
+        </div>
+        <div data-hf-id="hf-6brt" class="s2-counter-right">
+          <div data-hf-id="hf-0xa3">2.00 s WINDOW</div>
+          <div data-hf-id="hf-0bf6" style="color: #f4f1ea; margin-top: 6px;">ZERO JITTER</div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-v7in" class="s2-chain">
+        <div data-hf-id="hf-hzgm" id="s2-st1" class="s2-stage">
+          <span data-hf-id="hf-rugk" class="s2-stage-name">1. ANALOG SENSOR FRONTEND</span>
+          <span data-hf-id="hf-fvds" class="s2-stage-spec">SEN0240 → PA0</span>
+        </div>
+        <div data-hf-id="hf-e1cl" id="s2-st2" class="s2-stage">
+          <span data-hf-id="hf-eul5" class="s2-stage-name">2. 12-BIT ADC + DMA STREAM</span>
+          <span data-hf-id="hf-rsv3" class="s2-stage-spec">4,000 Hz NOMINAL</span>
+        </div>
+        <div data-hf-id="hf-nvmp" id="s2-st3" class="s2-stage s2-stage-active">
+          <span data-hf-id="hf-oaf7" class="s2-stage-name">3. CASCADED IIR BIQUAD DF-II</span>
+          <span data-hf-id="hf-t8g3" class="s2-stage-spec">HPF 20 · LPF 500 · NOTCH 50</span>
+        </div>
+        <div data-hf-id="hf-yjkj" id="s2-st4" class="s2-stage">
+          <span data-hf-id="hf-vror" class="s2-stage-name">4. RMS &amp; MAV FEATURE WINDOW</span>
+          <span data-hf-id="hf-r10o" class="s2-stage-spec">400 SAMPLES (100 ms)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const countEl = document.getElementById("s2-sample-count");
+      const counterState = { p: 0 };
+      const easeOutCubic = function (x) {
+        return 1 - Math.pow(1 - x, 3);
+      };
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#s2-hdr",
+        { y: -30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.36, ease: "expo.out" },
+        0
+      );
+      tl.fromTo(
+        "#s2-calib-box",
+        { scale: 0.96, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.38, ease: "power4.out" },
+        0.18
+      );
+      tl.fromTo(
+        counterState,
+        { p: 0 },
+        {
+          p: 1,
+          duration: 1.5,
+          ease: "none",
+          onUpdate: function () {
+            const val = Math.round(8000 * easeOutCubic(counterState.p));
+            countEl.textContent = val.toLocaleString("en-US") + " SAMPLES";
+          },
+        },
+        0.25
+      );
+
+      const stages = ["#s2-st1", "#s2-st2", "#s2-st3", "#s2-st4"];
+      stages.forEach(function (sel, idx) {
+        tl.fromTo(
+          sel,
+          { x: -48, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+          0.55 + idx * 0.24
+        );
+      });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["scene2"] = tl;
+    })();
+  </script>
+</template>

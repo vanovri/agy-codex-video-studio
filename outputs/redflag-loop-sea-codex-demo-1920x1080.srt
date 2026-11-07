@@ -1,0 +1,31 @@
+1
+00:00:00,150 --> 00:00:02,950
+Indonesian marketplace chats face APK resi and QRIS scams
+
+2
+00:00:03,050 --> 00:00:05,850
+Gen 0 rules score 0.629 F1 with 11 false positives on ID-ScamChat-72
+
+3
+00:00:06,150 --> 00:00:08,950
+Autonomous Write-Run-Evaluate-Repair loop clusters FPs and FNs
+
+4
+00:00:09,050 --> 00:00:11,850
+Evolves rule logic without human intervention on dev and val splits
+
+5
+00:00:12,150 --> 00:00:14,950
+Precision guardrail automatically rolls back overbroad Candidate 2A
+
+6
+00:00:15,050 --> 00:00:17,850
+Synthesizes obfuscation regex and Pusat Resolusi whitelists
+
+7
+00:00:18,150 --> 00:00:20,950
+F1 converges from 0.629 to 0.824, 0.936, and 1.000 in Gen 3
+
+8
+00:00:21,050 --> 00:00:23,850
+Zero false positives, +0.371 F1 gain, and 5/5 pytest pass
