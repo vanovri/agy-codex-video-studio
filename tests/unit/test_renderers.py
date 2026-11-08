@@ -50,6 +50,7 @@ def test_font_loaders_fallback_gracefully_when_fonts_missing(tmp_path: Path) -> 
     f4 = load_wide_font(["corrupt.ttf"], 20, fonts_dir=tmp_path)
     assert f3 is not None
     assert f4 is not None
+    assert all(f.getbbox("Test")[2] > 0 for f in (f1, f2, f3, f4))
 
 
 @pytest.mark.parametrize("neg_frame", [-1, -30, -900])

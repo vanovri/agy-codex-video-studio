@@ -339,7 +339,8 @@ def cmd_verify_render(
         f"Duration: {probe_result.duration_sec:.2f}s (OK: {is_duration_ok}), "
         f"Resolution: {probe_result.width}x{probe_result.height} (OK: {is_resolution_ok})"
     )
-    return 0 if (is_duration_ok and is_resolution_ok) else 1
+    is_compliance_ok = isinstance(compliance_check, dict) and (compliance_check.get("ok") is True)
+    return 0 if (is_duration_ok and is_resolution_ok and is_compliance_ok) else 1
 
 
 def cmd_generate_quad_showcase(
