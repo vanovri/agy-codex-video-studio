@@ -71,10 +71,10 @@ sequenceDiagram
     CLI->>Bridge: extract_contact_sheet
     Bridge->>Tools: look.py or fallback ffmpeg
     CLI->>Disk: Write render_verification.json
-    CLI-->>Caller: Exit based on duration and resolution only
+    CLI-->>Caller: Exit based on duration, resolution and literal compliance ok
 ```
 
-The final acceptance rule is the current implementation at `src/agy_codex_studio/cli.py:315-342`. FPS, codecs, audio presence and compliance results are reported but do not currently control that exit code. TECH_DEBT.md proposes a stricter contract.
+The final acceptance rule at `src/agy_codex_studio/cli.py:315-343` requires matching duration/resolution and a dictionary compliance result with literal ok=True. The external production change resolves the earlier compliance acceptance gap. FPS, codecs and audio presence remain reported values rather than independent CLI gates. TECH_DEBT.md proposes an explicit stricter media contract.
 
 ## Modules and entry points
 
@@ -101,7 +101,7 @@ Each pipeline call owns its word/cut/caption lists, ranking candidates, output p
 
 Python orchestration and subprocess adapters are synchronous. A subprocess may run independently at OS level, but the caller waits or writes its frame pipe directly. No async scheduler, worker queue, database or persisted job registry exists. Frames stream to FFmpeg rather than accumulating a complete raw video in memory. The soundtrack remains an in-memory full-duration allocation. Outputs use explicit paths and may overwrite prior files.
 
-The HTML path retains DOM, Canvas2D and GSAP timeline state per composition. Scene time drives the visual functions. The graph is a navigation aid and some indexed line numbers predate current source, so source locations above take precedence.
+The HTML path retains DOM, Canvas2D and GSAP timeline state per composition. Scene time drives the visual functions. The Graphify snapshot used during review was a navigation aid with some stale indexed lines. The derived graph file is absent at final closure. Current source confirmed the boundaries above and takes precedence.
 
 ## Local verification
 
@@ -113,4 +113,6 @@ python -m pytest -q tests
 
 Existing unit, integration, adversarial, property and mutation-harness tests cover the text/audio pipeline, serialization, render frames and injected tool boundaries. `tests/integration/test_pipeline_e2e.py` stubs FFmpeg processes and media probes while exercising real local caption/audio/file logic. This does not establish a freshly encoded playable MP4, live transcription, provider readiness or current coverage percentage. A packaging-only environment is a distinct check because required NumPy/Pillow are currently undeclared.
 
-`tests/test_audit_compliance_boundary.py` adds two passing integration controls and four strict expected failures for independent compliance rejection. The focused 2026-11-08 run completed with 2 passed and 4 xfailed. It exercises the actual CLI verification and native-probe adapter with injected tool processes. The expected failures document the pending acceptance bug, not a production fix.
+`tests/test_audit_compliance_boundary.py` exercises six real CLI/native-probe integration cases through injected tool processes. After an external production compliance fix and removal of its expected-failure marker, the focused 2026-11-09 check completed with 6 passed in 1.23 seconds. It independently covers successful verification, failed native probing, explicit compliance failure, missing/non-boolean ok and a compliance-tool exception.
+
+Historical full-suite evidence from 2026-11-08 recorded 202 passed and 4 expected failures before the external acceptance fix. It does not establish the current full-suite result. The current focused six-case result above verifies the changed boundary, and the parent reruns the complete current suite.

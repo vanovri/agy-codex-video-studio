@@ -122,11 +122,13 @@ diff --git a/src/agy_codex_studio/cli.py b/src/agy_codex_studio/cli.py
 
 Validation: injected runners should assert timeout values and raise subprocess.TimeoutExpired. Verify probe failure metadata, doctor degraded status for required tools, and contact-sheet timeout propagation without launching encoders. A real timeout test should use a small inert child in a temporary directory and confirm no child survives. Version probes that invoke npx can still require external package availability.
 
-## 3. P2: Make vertical render acceptance match its reported checks
+## 3. P2: Add explicit FPS, codec and audio gates to vertical acceptance
 
-Locations: `src/agy_codex_studio/cli.py:304-342` and `tests/unit/test_cli.py:92-142`.
+Locations: `src/agy_codex_studio/cli.py:304-343` and `tests/test_audit_compliance_boundary.py`.
 
-verify-render catches a compliance-tool failure, writes that failure to JSON, and still returns 0 whenever dimensions and duration match. FPS, codecs and audio are also only reported. The existing test's compliance-error case simultaneously uses a wrong expected duration, so it does not isolate this permissive behavior. The stricter proposal accepts the local 1080x1920, 30 fps, H.264/AAC-with-audio contract only when check.py returns literal ok=True. The external local check.py confirms that boolean field is its JSON contract. This is an intentional compatibility change: unavailable compliance tooling now rejects acceptance, and 29.97 fps is outside the proposed 0.01 fps tolerance.
+The current implementation now requires literal compliance ok=True in addition to matching dimensions and duration. That external production fix resolves the earlier permissive compliance result. The six independent boundary tests now pass normally, including tool failure, missing ok and a non-boolean ok. This worker changed no production code or test markers during final closure.
+
+FPS, video codec and audio are still only reported by the CLI's own gate. The stricter proposal explicitly accepts 1080x1920, 30 fps, H.264/AAC-with-audio plus successful compliance. This is a local policy decision that also protects callers injecting a permissive compliance adapter. It intentionally rejects 29.97 fps under the proposed 0.01 fps tolerance. Keep a different tolerance or codec policy if the product contract requires it.
 
 ```diff
 diff --git a/src/agy_codex_studio/cli.py b/src/agy_codex_studio/cli.py
@@ -139,7 +141,7 @@ diff --git a/src/agy_codex_studio/cli.py b/src/agy_codex_studio/cli.py
 +    is_fps_ok = math.isfinite(probe_result.fps) and abs(probe_result.fps - 30.0) <= 0.01
 +    is_audio_ok = probe_result.has_audio and probe_result.audio_codec == "aac"
 +    is_video_codec_ok = probe_result.video_codec == "h264"
-+    is_compliance_ok = compliance_check.get("ok") is True
++    is_compliance_ok = isinstance(compliance_check, dict) and (compliance_check.get("ok") is True)
 +    accepted = all((is_duration_ok, is_resolution_ok, is_fps_ok, is_audio_ok, is_video_codec_ok, is_compliance_ok))
  
      verification_data = {
@@ -156,18 +158,19 @@ diff --git a/src/agy_codex_studio/cli.py b/src/agy_codex_studio/cli.py
          "fps": probe_result.fps,
          "video_codec": probe_result.video_codec,
          "audio_codec": probe_result.audio_codec,
-@@ -339,7 +349,7 @@
+@@ -339,8 +349,7 @@
          f"Duration: {probe_result.duration_sec:.2f}s (OK: {is_duration_ok}), "
          f"Resolution: {probe_result.width}x{probe_result.height} (OK: {is_resolution_ok})"
      )
--    return 0 if (is_duration_ok and is_resolution_ok) else 1
+-    is_compliance_ok = isinstance(compliance_check, dict) and (compliance_check.get("ok") is True)
+-    return 0 if (is_duration_ok and is_resolution_ok and is_compliance_ok) else 1
 +    return 0 if accepted else 1
  
  
  def cmd_generate_quad_showcase(
 ```
 
-Validation: hold dimensions/duration constant and independently inject compliance ok=False, compliance exceptions, absent/incorrect ok values, missing audio, wrong codecs, and wrong FPS. Each should produce accepted=False and exit1 under the proposal. Keep the all-valid case and duration mismatch case. A contact sheet and probe metadata do not establish visual quality or hardware truth.
+Validate missing audio, wrong codecs, non-finite FPS and wrong FPS while holding dimensions/duration valid and injecting compliance ok=True. Under the proposal each should report accepted=False and exit1. Retain the current six independent compliance/probe controls. Probe metadata and a contact sheet do not establish visual quality or hardware truth.
 
 ## 4. P3: Avoid repeated suffix copies when scanning noisy JSON
 
